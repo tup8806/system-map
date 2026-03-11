@@ -1,0 +1,21 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s25: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 00:1b:d3:de:49:b0 brd ff:ff:ff:ff:ff:ff
+3: wlp10s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:27:10:37:78:e8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.4.82/22 brd 192.168.7.255 scope global dynamic noprefixroute wlp10s0
+       valid_lft 8514sec preferred_lft 8514sec
+    inet6 fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8/64 scope global temporary dynamic 
+       valid_lft 600805sec preferred_lft 81881sec
+    inet6 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591760sec preferred_lft 604560sec
+    inet6 fe80::227:10ff:fe37:78e8/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600 
+169.254.0.0/16 dev wlp10s0 scope link metric 1000 
+192.168.4.0/22 dev wlp10s0 proto kernel scope link src 192.168.4.82 metric 600 

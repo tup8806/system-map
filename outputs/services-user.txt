@@ -1,0 +1,46 @@
+UNIT FILE                                                             STATE     PRESET
+app-light\x2dlocker@autostart.service                                 generated -
+app-nm\x2dapplet@autostart.service                                    generated -
+app-orca\x2dautostart@autostart.service                               generated -
+app-polkit\x2dgnome\x2dauthentication\x2dagent\x2d1@autostart.service generated -
+app-print\x2dapplet@autostart.service                                 generated -
+app-xdg\x2duser\x2ddirs\x2dkde@autostart.service                      generated -
+app-xfce4\x2dnotifyd@autostart.service                                generated -
+app-xfce4\x2dpower\x2dmanager@autostart.service                       generated -
+app-xfsettingsd@autostart.service                                     generated -
+app-xiccd@autostart.service                                           generated -
+app-xscreensaver@autostart.service                                    generated -
+at-spi-dbus-bus.service                                               static    -
+colord-session.service                                                static    -
+dbus.service                                                          static    -
+dconf.service                                                         static    -
+dirmngr.service                                                       static    -
+gcr-ssh-agent.service                                                 enabled   enabled
+glib-pacrunner.service                                                static    -
+gnome-keyring-daemon.service                                          enabled   enabled
+gpg-agent.service                                                     static    -
+gvfs-afc-volume-monitor.service                                       static    -
+gvfs-daemon.service                                                   static    -
+gvfs-goa-volume-monitor.service                                       static    -
+gvfs-gphoto2-volume-monitor.service                                   static    -
+gvfs-metadata.service                                                 static    -
+gvfs-mtp-volume-monitor.service                                       static    -
+gvfs-udisks2-volume-monitor.service                                   static    -
+openclaw-gateway.service                                              enabled   enabled
+pulseaudio-x11.service                                                static    -
+pulseaudio.service                                                    enabled   enabled
+ssh-agent.service                                                     static    -
+systemd-exit.service                                                  static    -
+systemd-tmpfiles-clean.service                                        static    -
+systemd-tmpfiles-setup.service                                        disabled  enabled
+thunar.service                                                        static    -
+tumblerd.service                                                      static    -
+xdg-desktop-portal-gtk.service                                        static    -
+xdg-desktop-portal-rewrite-launchers.service                          enabled   enabled
+xdg-desktop-portal.service                                            static    -
+xdg-document-portal.service                                           static    -
+xdg-permission-store.service                                          static    -
+xfce4-notifyd.service                                                 static    -
+xscreensaver.service                                                  disabled  enabled
+
+43 unit files listed.
