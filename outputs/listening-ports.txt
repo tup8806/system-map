@@ -1,5 +1,5 @@
 Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                   
-udp   UNCONN 0      0            0.0.0.0:48783      0.0.0.0:*    users:(("firefox-esr",pid=1419,fd=82))   
+udp   UNCONN 0      0            0.0.0.0:55399      0.0.0.0:*    users:(("firefox-esr",pid=1419,fd=82))   
 udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=26))
 udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=24))
 tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*                                             

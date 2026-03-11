@@ -37,7 +37,7 @@ cp "$HOME/.bashrc" "$CFG/bash/" 2>/dev/null || true
 cp "$HOME/.profile" "$CFG/bash/" 2>/dev/null || true
 cp "$HOME/.bash_aliases" "$CFG/bash/" 2>/dev/null || true
 cp "$HOME/.ssh/config" "$CFG/ssh/" 2>/dev/null || true
-cp -r "$HOME/.config/systemd/user" "$CFG/systemd-user/" 2>/dev/null || true
-cp -r "$HOME/.config/autostart" "$CFG/autostart/" 2>/dev/null || true
+cp -r "$HOME/.config/systemd/user/." "$CFG/systemd-user/" 2>/dev/null || true
+cp -r "$HOME/.config/autostart/." "$CFG/autostart/" 2>/dev/null || true
 
 echo "Done."

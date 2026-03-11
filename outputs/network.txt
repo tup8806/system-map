@@ -9,13 +9,18 @@
 3: wlp10s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 00:27:10:37:78:e8 brd ff:ff:ff:ff:ff:ff
     inet 192.168.4.82/22 brd 192.168.7.255 scope global dynamic noprefixroute wlp10s0
-       valid_lft 8514sec preferred_lft 8514sec
+       valid_lft 7423sec preferred_lft 7423sec
     inet6 fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8/64 scope global temporary dynamic 
-       valid_lft 600805sec preferred_lft 81881sec
+       valid_lft 599714sec preferred_lft 80790sec
     inet6 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 scope global dynamic mngtmpaddr noprefixroute 
-       valid_lft 2591760sec preferred_lft 604560sec
+       valid_lft 2591806sec preferred_lft 604606sec
     inet6 fe80::227:10ff:fe37:78e8/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 8a:63:11:70:db:d3 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
        valid_lft forever preferred_lft forever
 default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600 
 169.254.0.0/16 dev wlp10s0 scope link metric 1000 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
 192.168.4.0/22 dev wlp10s0 proto kernel scope link src 192.168.4.82 metric 600 
