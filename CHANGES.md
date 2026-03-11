@@ -30,3 +30,6 @@ network.txt
 ├─ full routing table
 ├─ DNS configuration
 └─ Wi-Fi network
+
+## 2026-03-11
+Improve Toughbook system mapping and snapshot coverage
