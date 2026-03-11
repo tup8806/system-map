@@ -41,3 +41,21 @@ cp -r "$HOME/.config/systemd/user/." "$CFG/systemd-user/" 2>/dev/null || true
 cp -r "$HOME/.config/autostart/." "$CFG/autostart/" 2>/dev/null || true
 
 echo "Done."
+# running services
+systemctl list-units --type=service --state=running > "$OUT/running-services.txt" 2>/dev/null || true
+
+# systemd timers
+systemctl list-timers > "$OUT/systemd-timers.txt" 2>/dev/null || true
+
+# cron jobs
+crontab -l > "$OUT/user-cron.txt" 2>/dev/null || true
+ls /etc/cron* -R > "$OUT/system-cron-files.txt" 2>/dev/null || true
+
+# kernel modules
+lsmod > "$OUT/kernel-modules.txt" 2>/dev/null || true
+
+# firewall
+sudo iptables -L -n > "$OUT/firewall-rules.txt" 2>/dev/null || true
+
+# open ports snapshot
+ss -tulpen > "$OUT/open-ports.txt" 2>/dev/null || true
