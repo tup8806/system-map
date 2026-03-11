@@ -11,3 +11,6 @@
 - Added nightly helper workflow
 - Connected local repo to GitHub
 - Pushed main branch successfully
+
+## 2026-03-11
+- added desktop launcher
