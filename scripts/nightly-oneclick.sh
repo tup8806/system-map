@@ -16,9 +16,16 @@ echo
 git diff --stat
 
 echo
-echo "When ready, run:"
-echo "git add ."
-echo "git commit -m \"Nightly update\""
-echo "git push"
+echo "Updating git repository..."
+
+git add outputs/server configs/server notes/server-purpose.md scripts/update-system-map.sh scripts/nightly-oneclick.sh CHANGES.md 2>/dev/null || true
+
+git commit -m "Server snapshot $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || echo "No changes to commit"
+
+git push 2>/dev/null || echo "Git push skipped or failed"
+
 echo
+echo "Server snapshot complete."
+echo
+
 exec bash

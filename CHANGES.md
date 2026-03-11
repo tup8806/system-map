@@ -33,3 +33,7 @@ network.txt
 
 ## 2026-03-11
 Improve Toughbook system mapping and snapshot coverage
+
+## 2026-03-11
+server snapshots added 
+
