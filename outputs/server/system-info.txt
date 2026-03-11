@@ -1,0 +1,17 @@
+# Hostnamectl
+
+ Static hostname: tup
+       Icon name: computer-desktop
+         Chassis: desktop 🖥️
+      Machine ID: c1a7688642174566be96e87034d25f80
+         Boot ID: 5b8c69838c5e437dae58644c0f3646f3
+Operating System: Debian GNU/Linux 12 (bookworm)
+          Kernel: Linux 6.1.0-43-amd64
+    Architecture: x86-64
+ Hardware Vendor: Dell Inc.
+  Hardware Model: OptiPlex 7010
+Firmware Version: A15
+
+# uname -a
+
+Linux tup 6.1.0-43-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.162-1 (2026-02-08) x86_64 GNU/Linux

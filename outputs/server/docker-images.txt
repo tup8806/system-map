@@ -1,0 +1,7 @@
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+ghcr.io/haveagitgat/tdarr:latest         ee9662a43278        4.2GB             0B   U    
+jellyfin/jellyfin:latest                 7009e8f01259       1.55GB             0B   U    
+louislam/uptime-kuma:1                   f48d816cb746        448MB             0B   U    
+pihole/pihole:latest                     0f48fbd2ea9d       97.6MB             0B        
+portainer/helper-reset-password:latest   7534ba608a4f       57.9MB             0B        
+portainer/portainer-ce:latest            062a783918fb        183MB             0B   U    

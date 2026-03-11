@@ -1,0 +1,143 @@
+Module                  Size  Used by
+udp_diag               16384  0
+tcp_diag               16384  0
+inet_diag              24576  2 tcp_diag,udp_diag
+msr                    16384  0
+snd_seq_dummy          16384  0
+snd_seq                90112  1 snd_seq_dummy
+snd_seq_device         16384  1 snd_seq
+nf_conntrack_netlink    57344  0
+xt_nat                 16384  13
+xt_tcpudp              20480  0
+veth                   36864  0
+xt_conntrack           16384  3
+xt_MASQUERADE          20480  3
+bridge                319488  0
+stp                    16384  1 bridge
+llc                    16384  2 bridge,stp
+xfrm_user              53248  1
+xfrm_algo              16384  1 xfrm_user
+xt_set                 16384  0
+ip_set                 61440  1 xt_set
+nft_chain_nat          16384  9
+nf_nat                 57344  3 xt_nat,nft_chain_nat,xt_MASQUERADE
+nf_conntrack          188416  5 xt_conntrack,nf_nat,xt_nat,nf_conntrack_netlink,xt_MASQUERADE
+nf_defrag_ipv6         24576  1 nf_conntrack
+nf_defrag_ipv4         16384  1 nf_conntrack
+xt_addrtype            16384  4
+nft_compat             20480  23
+nf_tables             303104  294 nft_compat,nft_chain_nat
+libcrc32c              16384  3 nf_conntrack,nf_nat,nf_tables
+nfnetlink              20480  5 nft_compat,nf_conntrack_netlink,nf_tables,ip_set
+overlay               163840  4
+intel_rapl_msr         20480  0
+intel_rapl_common      32768  1 intel_rapl_msr
+snd_hda_codec_hdmi     81920  1
+x86_pkg_temp_thermal    20480  0
+intel_powerclamp       20480  0
+snd_hda_codec_realtek   180224  1
+snd_hda_codec_generic    98304  1 snd_hda_codec_realtek
+kvm_intel             380928  0
+kvm                  1146880  1 kvm_intel
+irqbypass              16384  1 kvm
+i915                 3059712  4
+ghash_clmulni_intel    16384  0
+sha512_ssse3           49152  0
+sha512_generic         16384  1 sha512_ssse3
+drm_buddy              20480  1 i915
+drm_display_helper    184320  1 i915
+sha256_ssse3           32768  0
+sha1_ssse3             32768  0
+cec                    61440  2 drm_display_helper,i915
+rc_core                69632  1 cec
+xpad                   45056  0
+ttm                    94208  1 i915
+drm_kms_helper        212992  2 drm_display_helper,i915
+snd_hda_intel          61440  3
+aesni_intel           393216  0
+ledtrig_audio          16384  1 snd_hda_codec_generic
+dell_smbios            32768  0
+i2c_algo_bit           16384  1 i915
+ff_memless             20480  1 xpad
+snd_intel_dspcfg       36864  1 snd_hda_intel
+snd_intel_sdw_acpi     20480  1 snd_intel_dspcfg
+dell_wmi_descriptor    20480  1 dell_smbios
+rfkill                 36864  1
+iTCO_wdt               16384  0
+snd_hda_codec         184320  4 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_realtek
+crypto_simd            16384  1 aesni_intel
+joydev                 28672  0
+mei_hdcp               24576  0
+cryptd                 28672  2 crypto_simd,ghash_clmulni_intel
+intel_pmc_bxt          16384  1 iTCO_wdt
+mei_wdt                16384  0
+snd_hda_core          122880  5 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
+rapl                   20480  0
+snd_hwdep              16384  1 snd_hda_codec
+dcdbas                 20480  1 dell_smbios
+intel_cstate           20480  0
+iTCO_vendor_support    16384  1 iTCO_wdt
+snd_pcm               159744  5 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
+snd_timer              49152  3 snd_seq,snd_pcm
+mei_me                 53248  2
+intel_uncore          212992  0
+sg                     40960  0
+snd                   126976  14 snd_hda_codec_generic,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek,snd_timer,snd_pcm
+watchdog               45056  2 iTCO_wdt,mei_wdt
+mei                   159744  5 mei_wdt,mei_hdcp,mei_me
+soundcore              16384  1 snd
+at24                   28672  0
+evdev                  28672  13
+serio_raw              20480  0
+pcspkr                 16384  0
+button                 24576  0
+binfmt_misc            28672  1
+dm_mod                184320  0
+configfs               57344  1
+drm                   614400  7 drm_kms_helper,drm_display_helper,drm_buddy,i915,ttm
+fuse                  176128  3
+loop                   32768  0
+uinput                 20480  0
+efi_pstore             16384  0
+coretemp               20480  0
+ip_tables              36864  0
+x_tables               61440  8 xt_conntrack,nft_compat,xt_tcpudp,xt_addrtype,xt_nat,xt_set,ip_tables,xt_MASQUERADE
+autofs4                53248  2
+ext4                  983040  1
+crc16                  16384  1 ext4
+mbcache                16384  1 ext4
+jbd2                  167936  1 ext4
+crc32c_generic         16384  0
+hid_generic            16384  0
+usbhid                 65536  0
+hid                   159744  2 usbhid,hid_generic
+sd_mod                 65536  3
+t10_pi                 16384  1 sd_mod
+sr_mod                 28672  0
+crc64_rocksoft         20480  1 t10_pi
+crc64                  20480  1 crc64_rocksoft
+cdrom                  81920  1 sr_mod
+crc_t10dif             20480  1 t10_pi
+crct10dif_generic      16384  0
+ahci                   49152  2
+libahci                49152  1 ahci
+libata                401408  2 libahci,ahci
+crct10dif_pclmul       16384  1
+crct10dif_common       16384  3 crct10dif_generic,crc_t10dif,crct10dif_pclmul
+crc32_pclmul           16384  0
+crc32c_intel           24576  3
+xhci_pci               24576  0
+psmouse               184320  0
+ehci_pci               20480  0
+xhci_hcd              315392  1 xhci_pci
+scsi_mod              286720  4 sd_mod,libata,sg,sr_mod
+ehci_hcd              102400  1 ehci_pci
+i2c_i801               36864  0
+i2c_smbus              20480  1 i2c_i801
+scsi_common            16384  4 scsi_mod,libata,sg,sr_mod
+lpc_ich                28672  0
+usbcore               348160  6 xhci_hcd,ehci_pci,usbhid,xpad,ehci_hcd,xhci_pci
+e1000e                315392  0
+usb_common             16384  3 xhci_hcd,usbcore,ehci_hcd
+video                  65536  1 i915
+wmi                    36864  3 video,dell_smbios,dell_wmi_descriptor

@@ -1,0 +1,12 @@
+NEXT                        LEFT         LAST                        PASSED     UNIT                         ACTIVATES
+Wed 2026-03-11 15:22:25 CDT 40min left   Tue 2026-03-10 21:09:13 CDT 17h ago    apt-daily.timer              apt-daily.service
+Wed 2026-03-11 18:46:45 CDT 4h 4min left Tue 2026-03-10 18:46:45 CDT 19h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Thu 2026-03-12 00:00:00 CDT 9h left      Wed 2026-03-11 00:00:05 CDT 14h ago    dpkg-db-backup.timer         dpkg-db-backup.service
+Thu 2026-03-12 00:00:00 CDT 9h left      Wed 2026-03-11 00:00:05 CDT 14h ago    logrotate.timer              logrotate.service
+Thu 2026-03-12 06:20:55 CDT 15h left     Wed 2026-03-11 06:21:13 CDT 8h ago     apt-daily-upgrade.timer      apt-daily-upgrade.service
+Thu 2026-03-12 07:54:14 CDT 17h left     Wed 2026-03-11 01:39:13 CDT 13h ago    man-db.timer                 man-db.service
+Sun 2026-03-15 03:10:08 CDT 3 days left  Sun 2026-03-08 03:10:22 CDT 3 days ago e2scrub_all.timer            e2scrub_all.service
+Mon 2026-03-16 00:21:03 CDT 4 days left  Mon 2026-03-09 01:03:45 CDT 2 days ago fstrim.timer                 fstrim.service
+
+8 timers listed.
+Pass --all to see loaded but inactive timers, too.

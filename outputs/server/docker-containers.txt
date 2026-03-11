@@ -1,0 +1,5 @@
+CONTAINER ID   IMAGE                              COMMAND                  CREATED       STATUS                PORTS                                        NAMES
+b3d4a660efa0   ghcr.io/haveagitgat/tdarr:latest   "/init"                  5 days ago    Up 2 days             0.0.0.0:8265-8266->8265-8266/tcp, 8267/tcp   tdarr
+2bed568278c0   jellyfin/jellyfin:latest           "/jellyfin/jellyfin"     2 weeks ago   Up 2 days (healthy)   0.0.0.0:8096->8096/tcp                       jellyfin
+137e7a34e370   louislam/uptime-kuma:1             "/usr/bin/dumb-init …"   2 weeks ago   Up 2 days (healthy)   0.0.0.0:3001->3001/tcp                       uptime-kuma
+c24b1849affc   portainer/portainer-ce:latest      "/portainer"             2 weeks ago   Up 2 days             8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp   portainer

@@ -2,13 +2,13 @@
 set -e
 
 BASE="$HOME/system-map"
-OUT="$BASE/outputs"
-CFG="$BASE/configs"
+OUT="$BASE/outputs/server"
+CFG="$BASE/configs/server"
 
 mkdir -p "$OUT"
 mkdir -p "$CFG/bash" "$CFG/ssh" "$CFG/systemd-user" "$CFG/autostart"
 
-echo "Collecting system info..."
+echo "Collecting server system info..."
 
 {
   echo "# Hostnamectl"
@@ -24,9 +24,11 @@ lsb_release -a > "$OUT/os-release.txt" 2>/dev/null || cat /etc/os-release > "$OU
 
 lscpu > "$OUT/cpu.txt" 2>/dev/null || true
 free -h > "$OUT/memory.txt" 2>/dev/null || true
-lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINT,MODEL > "$OUT/storage.txt" 2>/dev/null || true
+
+lsblk -o NAME,SIZE,FSTYPE,FSAVAIL,FSUSE%,MOUNTPOINT,MODEL > "$OUT/storage.txt" 2>/dev/null || true
 df -h > "$OUT/filesystems.txt" 2>/dev/null || true
 mount > "$OUT/mounts.txt" 2>/dev/null || true
+blkid > "$OUT/blkid.txt" 2>/dev/null || true
 
 {
   echo "# Network Identity Snapshot"
@@ -48,9 +50,6 @@ mount > "$OUT/mounts.txt" 2>/dev/null || true
   echo
   echo "## DNS"
   cat /etc/resolv.conf
-  echo
-  echo "## Active Wi-Fi"
-  nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | grep '^yes' || echo "No active Wi-Fi SSID found"
 } > "$OUT/network.txt"
 
 ss -tulpn > "$OUT/listening-ports.txt" 2>/dev/null || true
@@ -68,6 +67,12 @@ snap list > "$OUT/snaps.txt" 2>/dev/null || true
 
 docker ps -a > "$OUT/docker-containers.txt" 2>/dev/null || true
 docker images > "$OUT/docker-images.txt" 2>/dev/null || true
+docker volume ls > "$OUT/docker-volumes.txt" 2>/dev/null || true
+docker network ls > "$OUT/docker-networks.txt" 2>/dev/null || true
+
+if docker ps -aq >/dev/null 2>&1 && [ -n "$(docker ps -aq)" ]; then
+  docker inspect $(docker ps -aq) > "$OUT/docker-inspect.json" 2>/dev/null || true
+fi
 
 crontab -l > "$OUT/user-cron.txt" 2>/dev/null || true
 ls /etc/cron* -R > "$OUT/system-cron-files.txt" 2>/dev/null || true
@@ -79,6 +84,11 @@ if [ "$(id -u)" -eq 0 ]; then
 else
   echo "Run as root to capture firewall rules" > "$OUT/firewall-rules.txt"
 fi
+
+findmnt > "$OUT/findmnt.txt" 2>/dev/null || true
+cat /etc/fstab > "$OUT/fstab.txt" 2>/dev/null || true
+exportfs -v > "$OUT/nfs-exports.txt" 2>/dev/null || true
+testparm -s > "$OUT/samba-config.txt" 2>/dev/null || true
 
 cp "$HOME/.bashrc" "$CFG/bash/" 2>/dev/null || true
 cp "$HOME/.profile" "$CFG/bash/" 2>/dev/null || true

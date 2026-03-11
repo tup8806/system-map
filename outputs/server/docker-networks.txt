@@ -1,0 +1,6 @@
+NETWORK ID     NAME               DRIVER    SCOPE
+8e381aadae11   bridge             bridge    local
+dc5ab34c9662   core_default       bridge    local
+cefde9453501   host               host      local
+0a5b42541c36   jellyfin_default   bridge    local
+20b6fb36bccc   none               null      local

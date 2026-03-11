@@ -1,0 +1,31 @@
+# Network Identity Snapshot
+
+Captured: Wed Mar 11 02:42:24 PM CDT 2026
+
+## Hostname
+tup
+192.168.4.76 172.22.0.1 172.17.0.1 172.18.0.1 
+
+## Interfaces and Addresses
+lo               UNKNOWN        127.0.0.1/8 
+eno1             UP             192.168.4.76/22 
+br-0a5b42541c36  UP             172.22.0.1/16 
+docker0          UP             172.17.0.1/16 
+br-dc5ab34c9662  UP             172.18.0.1/16 
+vetha5f195b@if2  UP             
+veth0930230@if2  UP             
+veth9850c25@if2  UP             
+veth8fc5835@if2  UP             
+
+## Default Route
+default via 192.168.4.1 dev eno1 
+
+## Full Routing Table
+default via 192.168.4.1 dev eno1 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 
+172.18.0.0/16 dev br-dc5ab34c9662 proto kernel scope link src 172.18.0.1 
+172.22.0.0/16 dev br-0a5b42541c36 proto kernel scope link src 172.22.0.1 
+192.168.4.0/22 dev eno1 proto kernel scope link src 192.168.4.76 
+
+## DNS
+nameserver 192.168.4.1
