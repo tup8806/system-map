@@ -1,18 +1,32 @@
 #!/bin/bash
 set -e
 
-echo "Collecting server snapshot..."
+BASE="$HOME/system-map"
 
-"$HOME/system-map/scripts/update-system-map.sh"
+"$BASE/scripts/update-system-map.sh"
+
+echo
+echo "Next steps:"
+echo "1) Update your notes:"
+echo "   nano CHANGES.md"
+echo
+echo "2) Review changes:"
+echo "   git status"
+echo "   git diff --stat"
+echo
+echo "3) Save snapshot:"
+echo "   git add ."
+echo "   git commit -m \"Nightly update\""
+echo "   git push"
 
 echo "Updating git repository..."
 
 cd "$HOME/system-map"
 
-git add outputs/server configs/server scripts/update-system-map.sh 2>/dev/null || true
+git add outputs configs 2>/dev/null
 
-git commit -m "Server snapshot $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || echo "No changes to commit"
+git commit -m "Nightly system snapshot $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || echo "No changes to commit"
 
 git push 2>/dev/null || echo "Git push skipped or failed"
 
-echo "Server snapshot complete."
+echo "Snapshot complete."

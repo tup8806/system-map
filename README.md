@@ -1,23 +1,8 @@
 # System Map
 
-This repository documents the Toughbook system, its purpose, important software, selected configs, and generated system snapshots.
+This repository documents the systems in my homelab, their hardware, software, roles, configs, and generated state snapshots.
 
-## Purpose
-- record installed software and enabled services
-- back up important user config files
-- track system changes over time
-- make troubleshooting easier
-- maintain a repeatable system mapping habit
-
-## This machine
-The Toughbook is used as:
-- a portable Debian workstation
-- a management terminal for the home server
-- a network diagnostics laptop
-- a hardware and power-tuning platform
-- a portable AI command station
-
-## Systems in this lab
+## Main Systems
 
 ### Toughbook
 Portable Debian workstation used for:
@@ -26,34 +11,44 @@ Portable Debian workstation used for:
 - hardware testing and power tuning
 - command-line AI tools
 
-More detail: `notes/toughbook-purpose.md`
-
 ### Optiplex Server
-Main home server on the local network.
+Main home server used for:
+- media storage
+- Jellyfin streaming
+- emulator hosting
+- Docker services
+- network file sharing
 
-Roles:
-- Jellyfin media server
-- Docker container host
-- Samba file server
-- Tdarr media processing
-- Uptime monitoring
+## Repository Structure
 
-More detail: `notes/server-overview.md`
-## Main folders
-- `scripts/` -> collection and backup scripts
-- `outputs/` -> generated system information
-- `configs/` -> copied user config files
+- `scripts/` -> automation and collection scripts
+- `outputs/` -> generated system snapshots
+- `outputs/server/` -> server-specific generated snapshots
+- `configs/` -> copied config files
+- `configs/server/` -> server-specific copied config files
 - `notes/` -> human-readable notes
+- `notes/hardware/` -> physical hardware documentation
 
-## Key files
-- `INVENTORY.md` -> summary of the Toughbook
-- `CHANGES.md` -> dated record of major changes
-- `notes/toughbook-purpose.md` -> explanation of the Toughbook's role
+## Key Files
+
+- `INVENTORY.md` -> Toughbook summary
+- `CHANGES.md` -> dated change history
+- `notes/toughbook-purpose.md` -> Toughbook role
+- `notes/server-purpose.md` -> server role
+- `notes/server-overview.md` -> server service summary
+- `notes/network-topology.md` -> network layout
+- `notes/hardware/toughbook.md` -> Toughbook hardware
+- `notes/hardware/server.md` -> server hardware
 
 ## Workflow
-The normal update flow is:
 
-1. run the mapping script
-2. review changed outputs
-3. update notes if needed
-4. commit the snapshot to git
+### Toughbook
+- run mapping script
+- review outputs
+- update notes if needed
+- commit snapshot to git
+
+### Server
+- run desktop launcher or nightly script
+- update server-specific outputs and configs
+- commit snapshot to git
