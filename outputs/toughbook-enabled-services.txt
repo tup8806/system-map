@@ -1,0 +1,28 @@
+UNIT FILE                          STATE   PRESET
+anacron.service                    enabled enabled
+apparmor.service                   enabled enabled
+bluetooth.service                  enabled enabled
+console-setup.service              enabled enabled
+cron.service                       enabled enabled
+e2scrub_reap.service               enabled enabled
+getty@.service                     enabled enabled
+keyboard-setup.service             enabled enabled
+keyd.service                       enabled enabled
+lightdm.service                    enabled enabled
+lm-sensors.service                 enabled enabled
+networking.service                 enabled enabled
+NetworkManager-dispatcher.service  enabled enabled
+NetworkManager-wait-online.service enabled enabled
+NetworkManager.service             enabled enabled
+powertop.service                   enabled enabled
+samba-ad-dc.service                enabled enabled
+smartmontools.service              enabled enabled
+ssh.service                        enabled enabled
+systemd-pstore.service             enabled enabled
+systemd-timesyncd.service          enabled enabled
+tor.service                        enabled enabled
+udisks2.service                    enabled enabled
+wpa_supplicant.service             enabled enabled
+zramswap.service                   enabled enabled
+
+25 unit files listed.
