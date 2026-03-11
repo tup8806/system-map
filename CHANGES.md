@@ -18,3 +18,15 @@
 ## 2026-03-11
 disable samba-ad-dc
 remove twingate-connector
+
+## 2026-03-11
+added network snapshot
+network.txt
+│
+├─ capture time
+├─ hostname
+├─ interfaces
+├─ default gateway
+├─ full routing table
+├─ DNS configuration
+└─ Wi-Fi network

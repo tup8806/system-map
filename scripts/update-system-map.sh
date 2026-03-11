@@ -17,8 +17,30 @@ lsb_release -a > "$OUT/os-release.txt" 2>/dev/null || cat /etc/os-release > "$OU
 lscpu > "$OUT/cpu.txt" 2>/dev/null || true
 free -h > "$OUT/memory.txt" 2>/dev/null || true
 lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINT,MODEL > "$OUT/storage.txt" 2>/dev/null || true
-ip addr > "$OUT/network.txt" 2>/dev/null || true
-ip route >> "$OUT/network.txt" 2>/dev/null || true
+{
+  echo "# Network Identity Snapshot"
+  echo
+  echo "Captured: $(date)"
+  echo
+  echo "## Hostname"
+  hostname
+  hostname -I
+  echo
+  echo "## Interfaces and Addresses"
+  ip -brief address
+  echo
+  echo "## Default Route"
+  ip route | grep default
+  echo
+  echo "## Full Routing Table"
+  ip route
+  echo
+  echo "## DNS"
+  cat /etc/resolv.conf
+  echo
+  echo "## Active Wi-Fi"
+  nmcli -t -f ACTIVE,SSID dev wifi 2>/dev/null | grep '^yes' || echo "No active Wi-Fi SSID found"
+} > "$OUT/network.txt"
 ss -tulpn > "$OUT/listening-ports.txt" 2>/dev/null || true
 
 systemctl list-unit-files --type=service > "$OUT/services-system.txt" 2>/dev/null || true
