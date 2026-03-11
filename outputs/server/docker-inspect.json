@@ -159,6 +159,22 @@
         "Mounts": [
             {
                 "Type": "bind",
+                "Source": "/srv/media",
+                "Destination": "/media",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/tmp/tdarr",
+                "Destination": "/temp",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
                 "Source": "/your/config/tdarr",
                 "Destination": "/app/configs",
                 "Mode": "rw",
@@ -177,22 +193,6 @@
                 "Type": "bind",
                 "Source": "/your/config/tdarr/server",
                 "Destination": "/app/server",
-                "Mode": "rw",
-                "RW": true,
-                "Propagation": "rprivate"
-            },
-            {
-                "Type": "bind",
-                "Source": "/srv/media",
-                "Destination": "/media",
-                "Mode": "rw",
-                "RW": true,
-                "Propagation": "rprivate"
-            },
-            {
-                "Type": "bind",
-                "Source": "/tmp/tdarr",
-                "Destination": "/temp",
                 "Mode": "rw",
                 "RW": true,
                 "Propagation": "rprivate"
@@ -342,32 +342,32 @@
                 "FailingStreak": 0,
                 "Log": [
                     {
-                        "Start": "2026-03-11T14:39:57.943854605-05:00",
-                        "End": "2026-03-11T14:39:58.010517663-05:00",
+                        "Start": "2026-03-11T15:22:33.539735235-05:00",
+                        "End": "2026-03-11T15:22:33.601662811-05:00",
                         "ExitCode": 0,
                         "Output": "Healthy"
                     },
                     {
-                        "Start": "2026-03-11T14:40:28.011016435-05:00",
-                        "End": "2026-03-11T14:40:28.082629753-05:00",
+                        "Start": "2026-03-11T15:23:03.602502578-05:00",
+                        "End": "2026-03-11T15:23:03.666163383-05:00",
                         "ExitCode": 0,
                         "Output": "Healthy"
                     },
                     {
-                        "Start": "2026-03-11T14:40:58.083724169-05:00",
-                        "End": "2026-03-11T14:40:58.150368174-05:00",
+                        "Start": "2026-03-11T15:23:33.66691732-05:00",
+                        "End": "2026-03-11T15:23:33.739767296-05:00",
                         "ExitCode": 0,
                         "Output": "Healthy"
                     },
                     {
-                        "Start": "2026-03-11T14:41:28.151121116-05:00",
-                        "End": "2026-03-11T14:41:28.214452324-05:00",
+                        "Start": "2026-03-11T15:24:03.740825085-05:00",
+                        "End": "2026-03-11T15:24:03.813994169-05:00",
                         "ExitCode": 0,
                         "Output": "Healthy"
                     },
                     {
-                        "Start": "2026-03-11T14:41:58.215330638-05:00",
-                        "End": "2026-03-11T14:41:58.282265449-05:00",
+                        "Start": "2026-03-11T15:24:33.815824557-05:00",
+                        "End": "2026-03-11T15:24:33.877585608-05:00",
                         "ExitCode": 0,
                         "Output": "Healthy"
                     }
@@ -507,14 +507,6 @@
         "Mounts": [
             {
                 "Type": "bind",
-                "Source": "/srv/appdata/jellyfin",
-                "Destination": "/config",
-                "Mode": "rw",
-                "RW": true,
-                "Propagation": "rprivate"
-            },
-            {
-                "Type": "bind",
                 "Source": "/srv/media",
                 "Destination": "/media",
                 "Mode": "rw",
@@ -530,6 +522,14 @@
                 "Mode": "",
                 "RW": true,
                 "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/srv/appdata/jellyfin",
+                "Destination": "/config",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
             }
         ],
         "Config": {
@@ -669,34 +669,34 @@
                 "FailingStreak": 0,
                 "Log": [
                     {
-                        "Start": "2026-03-11T14:38:24.423125781-05:00",
-                        "End": "2026-03-11T14:38:24.473977851-05:00",
+                        "Start": "2026-03-11T15:20:26.894486234-05:00",
+                        "End": "2026-03-11T15:20:26.950254361-05:00",
                         "ExitCode": 0,
-                        "Output": "2026/03/11 19:38:24 Checking http://127.0.0.1:3001\n2026/03/11 19:38:24 Health Check OK [Res Code: 200]\n"
+                        "Output": "2026/03/11 20:20:26 Checking http://127.0.0.1:3001\n2026/03/11 20:20:26 Health Check OK [Res Code: 200]\n"
                     },
                     {
-                        "Start": "2026-03-11T14:39:24.474618074-05:00",
-                        "End": "2026-03-11T14:39:24.527029656-05:00",
+                        "Start": "2026-03-11T15:21:26.951099417-05:00",
+                        "End": "2026-03-11T15:21:27.006094745-05:00",
                         "ExitCode": 0,
-                        "Output": "2026/03/11 19:39:24 Checking http://127.0.0.1:3001\n2026/03/11 19:39:24 Health Check OK [Res Code: 200]\n"
+                        "Output": "2026/03/11 20:21:27 Checking http://127.0.0.1:3001\n2026/03/11 20:21:27 Health Check OK [Res Code: 200]\n"
                     },
                     {
-                        "Start": "2026-03-11T14:40:24.527468137-05:00",
-                        "End": "2026-03-11T14:40:24.578349621-05:00",
+                        "Start": "2026-03-11T15:22:27.006647256-05:00",
+                        "End": "2026-03-11T15:22:27.070358181-05:00",
                         "ExitCode": 0,
-                        "Output": "2026/03/11 19:40:24 Checking http://127.0.0.1:3001\n2026/03/11 19:40:24 Health Check OK [Res Code: 200]\n"
+                        "Output": "2026/03/11 20:22:27 Checking http://127.0.0.1:3001\n2026/03/11 20:22:27 Health Check OK [Res Code: 200]\n"
                     },
                     {
-                        "Start": "2026-03-11T14:41:24.579730608-05:00",
-                        "End": "2026-03-11T14:41:24.638529363-05:00",
+                        "Start": "2026-03-11T15:23:27.071726413-05:00",
+                        "End": "2026-03-11T15:23:27.138652327-05:00",
                         "ExitCode": 0,
-                        "Output": "2026/03/11 19:41:24 Checking http://127.0.0.1:3001\n2026/03/11 19:41:24 Health Check OK [Res Code: 200]\n"
+                        "Output": "2026/03/11 20:23:27 Checking http://127.0.0.1:3001\n2026/03/11 20:23:27 Health Check OK [Res Code: 200]\n"
                     },
                     {
-                        "Start": "2026-03-11T14:42:24.639405639-05:00",
-                        "End": "2026-03-11T14:42:24.691413854-05:00",
+                        "Start": "2026-03-11T15:24:27.139844309-05:00",
+                        "End": "2026-03-11T15:24:27.190360647-05:00",
                         "ExitCode": 0,
-                        "Output": "2026/03/11 19:42:24 Checking http://127.0.0.1:3001\n2026/03/11 19:42:24 Health Check OK [Res Code: 200]\n"
+                        "Output": "2026/03/11 20:24:27 Checking http://127.0.0.1:3001\n2026/03/11 20:24:27 Health Check OK [Res Code: 200]\n"
                     }
                 ]
             }
