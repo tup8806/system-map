@@ -1,23 +1,48 @@
 # Inventory
 
 ## Machine
-- Hostname:
-- OS:
-- Desktop:
-- Kernel:
+- Hostname: toughbook
+- OS: Debian
+- Desktop: XFCE
+- Kernel: see outputs/system-info.txt
 
 ## Hardware
-- CPU:
-- RAM:
-- Storage:
-- GPU:
+- CPU: see outputs/cpu.txt
+- RAM: see outputs/memory.txt
+- Storage: see outputs/storage.txt
+- GPU: integrated graphics
 
-## Major software
+## Main Role
+Portable Debian workstation used for:
+- home server administration
+- network diagnostics
+- hardware and power tuning
+- portable AI command-line tools
+
+## Major Software
 - Docker
-- Jellyfin
+- Git
+- OpenSSH / SSHFS
+- Tor
+- Samba tools
 - OpenClaw
-- qBittorrent
-- EmulationStation
+- Google Gemini CLI
+- xscreensaver
+- cmatrix
+- smartmontools
+- powertop
+- zram-tools
+
+## Important Outputs
+- outputs/system-info.txt
+- outputs/network.txt
+- outputs/storage.txt
+- outputs/manual-packages.txt
+- outputs/running-services.txt
+- outputs/systemd-timers.txt
+- outputs/open-ports.txt
 
 ## Notes
-- Update this file when major hardware or software changes happen.
+- Detailed machine role is documented in notes/toughbook-purpose.md
+- Package and service inventories are stored in outputs/
+- This file should only describe the Toughbook itself
