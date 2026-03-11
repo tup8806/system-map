@@ -17,6 +17,28 @@ The Toughbook is used as:
 - a hardware and power-tuning platform
 - a portable AI command station
 
+## Systems in this lab
+
+### Toughbook
+Portable Debian workstation used for:
+- server administration
+- network diagnostics
+- hardware testing and power tuning
+- command-line AI tools
+
+More detail: `notes/toughbook-purpose.md`
+
+### Optiplex Server
+Main home server on the local network.
+
+Roles:
+- Jellyfin media server
+- Docker container host
+- Samba file server
+- Tdarr media processing
+- Uptime monitoring
+
+More detail: `notes/server-overview.md`
 ## Main folders
 - `scripts/` -> collection and backup scripts
 - `outputs/` -> generated system information
