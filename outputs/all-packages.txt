@@ -207,7 +207,6 @@ ii  gstreamer1.0-plugins-ugly:amd64       1.22.0-2+deb12u1                    am
 ii  gstreamer1.0-x:amd64                  1.22.0-3+deb12u5                    amd64        GStreamer plugins for X11 and Pango
 ii  gtk-update-icon-cache                 3.24.38-2~deb12u3                   amd64        icon theme caching utility
 ii  gtk2-engines-pixbuf:amd64             2.24.33-2+deb12u1                   amd64        pixbuf-based theme for GTK 2
-ii  guile-3.0-libs:amd64                  3.0.8-2                             amd64        Core Guile libraries
 ii  gvfs:amd64                            1.50.3-1                            amd64        userspace virtual filesystem - GIO module
 ii  gvfs-backends                         1.50.3-1                            amd64        userspace virtual filesystem - backends
 ii  gvfs-common                           1.50.3-1                            all          userspace virtual filesystem - common data files
@@ -474,7 +473,6 @@ ii  libgarcon-common                      4.18.0-1                            al
 ii  libgarcon-gtk3-1-0:amd64              4.18.0-1                            amd64        menu library for Xfce (GTK3 library)
 ii  libgav1-1:amd64                       0.18.0-1+b1                         amd64        AV1 decoder developed by Google -- runtime library
 ii  libgbm1:amd64                         22.3.6-1+deb12u1                    amd64        generic buffer management API -- runtime
-ii  libgc1:amd64                          1:8.2.2-3                           amd64        conservative garbage collector for C and C++
 ii  libgcc-12-dev:amd64                   12.2.0-14+deb12u1                   amd64        GCC support library (development files)
 ii  libgcc-s1:amd64                       12.2.0-14+deb12u1                   amd64        GCC support library
 ii  libgck-1-0:amd64                      3.41.1-1+b1                         amd64        Glib wrapper library for PKCS#11 - runtime
@@ -1035,7 +1033,6 @@ ii  libxcursor1:amd64                     1:1.2.1-1                           am
 ii  libxcvt0:amd64                        0.1.2-1                             amd64        VESA CVT standard timing modelines generator -- shared library
 ii  libxdamage1:amd64                     1:1.1.6-1                           amd64        X11 damaged region extension library
 ii  libxdmcp6:amd64                       1:1.1.2-3                           amd64        X11 Display Manager Control Protocol library
-ii  libxdo3:amd64                         1:3.20160805.1-5                    amd64        library for simulating (generating) X11 keyboard/mouse input events
 ii  libxext6:amd64                        2:1.3.4-1+b1                        amd64        X11 miscellaneous extension library
 ii  libxfce4panel-2.0-4                   4.18.2-1                            amd64        Xfce4 panel library (GTK3 variant)
 ii  libxfce4ui-2-0:amd64                  4.18.2-2                            amd64        widget library for Xfce - Gtk+3 variant
@@ -1315,7 +1312,7 @@ ii  torsocks                              2.4.0-1                             am
 ii  traceroute                            1:2.1.2-1                           amd64        Traces the route taken by packets over an IPv4/IPv6 network
 ii  tumbler:amd64                         4.18.0-1                            amd64        D-Bus thumbnailing service
 ii  tumbler-common                        4.18.0-1                            all          D-Bus thumbnailing service (common files)
-ii  twingate-connector                    1.85.0                              amd64        Twingate Connector
+rc  twingate-connector                    1.85.0                              amd64        Twingate Connector
 ii  tzdata                                2025b-0+deb12u2                     all          time zone and daylight-saving time data
 ii  ucf                                   3.0043+nmu1+deb12u1                 all          Update Configuration File(s): preserve user changes to config files
 ii  udev                                  252.39-1~deb12u1                    amd64        /dev/ and hotplug management daemon

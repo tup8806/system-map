@@ -14,3 +14,7 @@
 
 ## 2026-03-11
 - added desktop launcher
+
+## 2026-03-11
+disable samba-ad-dc
+remove twingate-connector

@@ -9,11 +9,11 @@
 3: wlp10s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 00:27:10:37:78:e8 brd ff:ff:ff:ff:ff:ff
     inet 192.168.4.82/22 brd 192.168.7.255 scope global dynamic noprefixroute wlp10s0
-       valid_lft 11000sec preferred_lft 11000sec
+       valid_lft 7520sec preferred_lft 7520sec
     inet6 fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8/64 scope global temporary dynamic 
-       valid_lft 559147sec preferred_lft 40223sec
+       valid_lft 555667sec preferred_lft 36743sec
     inet6 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 scope global dynamic mngtmpaddr noprefixroute 
-       valid_lft 2591934sec preferred_lft 604734sec
+       valid_lft 2591873sec preferred_lft 604673sec
     inet6 fe80::227:10ff:fe37:78e8/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 

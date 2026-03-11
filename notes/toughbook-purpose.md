@@ -7,6 +7,12 @@
 - hardware inspection and power-tuning platform
 - portable AI command station
 
+## Network Role
+
+This machine is not a server.
+
+It is used as a portable administration terminal for managing the home server and testing network configurations.
+
 ## Important Software
 - OpenClaw
 - Google Gemini CLI

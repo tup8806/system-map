@@ -168,7 +168,6 @@ systemd-volatile-root.service              static          -
 tor.service                                enabled         enabled
 tor@.service                               indirect        enabled
 tor@default.service                        enabled-runtime enabled
-twingate-connector.service                 disabled        disabled
 udev.service                               alias           -
 udisks2.service                            enabled         enabled
 upower.service                             disabled        enabled
@@ -184,4 +183,4 @@ wpa_supplicant@.service                    disabled        enabled
 x11-common.service                         masked          enabled
 zramswap.service                           enabled         enabled
 
-184 unit files listed.
+183 unit files listed.

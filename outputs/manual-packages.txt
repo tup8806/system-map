@@ -224,7 +224,6 @@ tasksel
 tasksel-data
 tor
 traceroute
-twingate-connector
 tzdata
 ucf
 udev
