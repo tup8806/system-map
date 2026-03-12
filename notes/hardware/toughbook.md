@@ -46,7 +46,26 @@ Used for:
 - home network administration
 - portable diagnostics
 - remote access
+------------------------------------------------------------
+Internal Hardware
+------------------------------------------------------------
+Graphics
+Intel Core Processor Integrated Graphics Controller
 
+Ethernet
+Intel 82577LM Gigabit Network Connection
+
+Wi-Fi
+Intel Centrino Advanced-N 6200
+
+Audio
+Intel High Definition Audio Controller
+
+Storage Controller
+Intel 5 Series / 3400 Series SATA Controller
+
+SD Card Reader
+Ricoh R5C822 SD/SDIO/MMC/MS/MSPro Host Adapter
 ------------------------------------------------------------
 Bluetooth
 ------------------------------------------------------------
