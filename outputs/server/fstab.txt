@@ -9,7 +9,8 @@
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
 # / was on /dev/sda1 during installation
-UUID=9aec5ff4-4c6f-48a2-b0b6-3729e72622b5 /               ext4    errors=remount-ro 0       1
+UUID=e33eb317-739f-468e-bb61-a1bf76548f72 /               ext4    errors=remount-ro 0       1
 # swap was on /dev/sda5 during installation
-UUID=a9e53005-b613-475d-8601-1165d734e2cb none            swap    sw              0       0
-/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0
+UUID=27745063-e321-4c9b-9dc8-17b9a281221a none            swap    sw              0       0
+tup@192.168.4.76:/  /mnt/myserver  fuse.sshfs  defaults,auto,_netdev,reconnect,IdentityFile=/home/tup/.ssh/id_ed25519,uid=1000,gid=1000,allow_other  0  0
+/swapfile none swap sw 0 0

@@ -1,6 +1,6 @@
 NAME     SIZE FSTYPE FSAVAIL FSUSE% MOUNTPOINT MODEL
-sda    465.8G                                  WDC WD5000AAKX-60U6AA0
-├─sda1 464.8G ext4    218.6G    47% /          
+sda    476.9G                                  TEAM T253512GB
+├─sda1   476G ext4    421.3G     5% /          
 ├─sda2     1K                                  
 └─sda5   975M swap                  [SWAP]     
-sr0     1024M                                  TSSTcorp DVD-ROM SN-108DN
+zram0    3.8G                       [SWAP]     

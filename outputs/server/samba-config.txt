@@ -34,10 +34,3 @@
 [print$]
 	comment = Printer Drivers
 	path = /var/lib/samba/printers
-
-
-[media]
-	create mask = 0775
-	directory mask = 0775
-	path = /srv/media
-	read only = No

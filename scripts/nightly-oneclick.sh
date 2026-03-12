@@ -2,6 +2,8 @@
 cd "$HOME/system-map" || exit 1
 
 ./scripts/update-system-map.sh
+./scripts/collect-system-info.sh
+./scripts/export-ai-context.sh > ai-context.md
 
 echo
 echo "Opening CHANGES.md for tonight's notes..."

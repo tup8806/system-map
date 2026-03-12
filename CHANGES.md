@@ -37,3 +37,7 @@ Improve Toughbook system mapping and snapshot coverage
 ## 2026-03-11
 server snapshots added 
 
+## 2026-03-11
+added to launcher
+ ./scripts/collect-system-info.sh
+./scripts/export-ai-context.sh > ai-context.md

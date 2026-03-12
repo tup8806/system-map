@@ -111,10 +111,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias game="sudo systemctl start retropie"
-alias monitor="sudo systemctl start sysmonitor"
-export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=~/.npm-global/bin:$PATH
+
+alias i2p-start="docker start i2p 2>/dev/null || docker run -d --name i2p --restart unless-stopped -p 4444:4444 -p 7657:7657 -p 6881:6881 -v $HOME/Downloads:/i2p/downloads -v i2p-config:/i2pconfig geti2p/i2p"
+alias i2p-stop="docker stop i2p"
+alias i2p-logs="docker logs -f i2p"
+alias dockeron="sudo systemctl start docker containerd"
 
 # OpenClaw Completion
 source "/home/tup/.openclaw/completions/openclaw.bash"
