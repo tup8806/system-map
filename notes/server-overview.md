@@ -48,3 +48,19 @@ Current Tdarr configuration directory.
 The Toughbook laptop is the primary administration terminal.
 
 Server management is typically done using SSH from the Toughbook.
+
+------------------------------------------------------------
+Service Dashboards
+------------------------------------------------------------
+
+Jellyfin
+http://192.168.4.76:8096
+
+Tdarr
+http://192.168.4.76:8265
+
+Uptime Kuma
+http://192.168.4.76:3001
+
+Portainer
+http://192.168.4.76:9000
