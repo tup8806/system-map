@@ -34,9 +34,29 @@ BIOS directory
 ------------------------------------------------------------
 Future Storage Expansion
 ------------------------------------------------------------
-
-Planned improvements:
-
 additional media drives
 dedicated backup drive
 archive storage
+
+------------------------------------------------------------
+Physical Disk Layout
+------------------------------------------------------------
+
+Primary Drive
+
+Device: /dev/sda
+Model: WDC WD5000
+Size: 465.8 GB
+
+Partitions
+
+/dev/sda1
+Filesystem: ext4
+Mount point: /
+Purpose: Operating system and server data
+
+/dev/sda5
+Filesystem: swap
+Purpose: virtual memory
+Planned improvements:
+
