@@ -1,4 +1,21 @@
 Module                  Size  Used by
+snd_seq_dummy          16384  0
+snd_hrtimer            16384  1
+snd_seq                90112  7 snd_seq_dummy
+snd_seq_device         16384  1 snd_seq
+cmac                   16384  2
+algif_hash             16384  1
+algif_skcipher         16384  1
+af_alg                 36864  6 algif_hash,algif_skcipher
+rfcomm                 94208  16
+videobuf2_vmalloc      20480  0
+videobuf2_memops       20480  1 videobuf2_vmalloc
+videobuf2_v4l2         36864  0
+videobuf2_common       73728  3 videobuf2_vmalloc,videobuf2_v4l2,videobuf2_memops
+videodev              294912  2 videobuf2_v4l2,videobuf2_common
+r820t                  32768  0
+i2c_mux                16384  0
+mc                     81920  3 videodev,videobuf2_v4l2,videobuf2_common
 xt_conntrack           16384  1
 xt_MASQUERADE          20480  1
 bridge                319488  0
@@ -38,7 +55,7 @@ btmtk                  16384  1 btusb
 sha256_ssse3           32768  0
 sha1_ssse3             32768  0
 iwldvm                167936  0
-bluetooth             962560  23 btrtl,btmtk,btintel,btbcm,bnep,btusb
+bluetooth             962560  46 btrtl,btmtk,btintel,btbcm,bnep,btusb,rfcomm
 snd_hda_codec_hdmi     81920  1
 lz4                    16384  4
 lz4_compress           24576  1 lz4
@@ -46,32 +63,32 @@ mac80211             1175552  1 iwldvm
 snd_hda_codec_conexant    32768  1
 snd_hda_codec_generic    98304  1 snd_hda_codec_conexant
 ledtrig_audio          16384  1 snd_hda_codec_generic
-aesni_intel           393216  6
+aesni_intel           393216  9
 zram                   40960  2
 msr                    16384  0
 zsmalloc               28672  1 zram
-snd_hda_intel          61440  4
+snd_hda_intel          61440  1
 libarc4                16384  1 mac80211
 snd_intel_dspcfg       36864  1 snd_hda_intel
 snd_intel_sdw_acpi     20480  1 snd_intel_dspcfg
 snd_hda_codec         184320  4 snd_hda_codec_generic,snd_hda_codec_conexant,snd_hda_codec_hdmi,snd_hda_intel
 crypto_simd            16384  1 aesni_intel
 jitterentropy_rng      16384  1
-cryptd                 28672  2 crypto_simd,ghash_clmulni_intel
+cryptd                 28672  3 crypto_simd,ghash_clmulni_intel
 iwlwifi               360448  1 iwldvm
-uinput                 20480  2
+uinput                 20480  3
 sha512_ssse3           49152  1
 snd_hda_core          122880  5 snd_hda_codec_generic,snd_hda_codec_conexant,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec
 sha512_generic         16384  1 sha512_ssse3
 intel_cstate           20480  0
 iTCO_wdt               16384  0
 snd_hwdep              16384  1 snd_hda_codec
-snd_pcm               159744  5 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
+snd_pcm               159744  4 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
 pcmcia                 77824  0
 intel_pmc_bxt          16384  1 iTCO_wdt
 ctr                    16384  3
 intel_uncore          212992  0
-snd_timer              49152  1 snd_pcm
+snd_timer              49152  3 snd_seq,snd_hrtimer,snd_pcm
 cfg80211             1155072  3 iwldvm,iwlwifi,mac80211
 iTCO_vendor_support    16384  1 iTCO_wdt
 drbg                   45056  1
@@ -79,7 +96,7 @@ pcspkr                 16384  0
 watchdog               45056  1 iTCO_wdt
 ansi_cprng             16384  0
 binfmt_misc            28672  1
-snd                   126976  15 snd_hda_codec_generic,snd_hda_codec_conexant,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_timer,snd_pcm
+snd                   126976  14 snd_hda_codec_generic,snd_seq,snd_hda_codec_conexant,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_timer,snd_pcm
 yenta_socket           53248  0
 ecdh_generic           16384  1 bluetooth
 pcmcia_rsrc            24576  1 yenta_socket
@@ -87,7 +104,7 @@ ecc                    40960  1 ecdh_generic
 pcmcia_core            36864  3 pcmcia,pcmcia_rsrc,yenta_socket
 soundcore              16384  1 snd
 intel_ips              28672  0
-rfkill                 36864  5 bluetooth,cfg80211
+rfkill                 36864  6 bluetooth,cfg80211
 tpm_infineon           20480  0
 int3400_thermal        20480  0
 int3402_thermal        16384  0
@@ -99,7 +116,7 @@ ac                     20480  0
 sparse_keymap          16384  1 panasonic_laptop
 joydev                 28672  0
 acpi_cpufreq           32768  1
-evdev                  28672  28
+evdev                  28672  41
 sg                     40960  0
 serio_raw              20480  0
 parport_pc             40960  0

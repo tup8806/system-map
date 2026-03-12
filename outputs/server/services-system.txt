@@ -8,6 +8,7 @@ apt-daily-upgrade.service                  static          -
 apt-daily.service                          static          -
 autovt@.service                            alias           -
 avahi-daemon.service                       disabled        enabled
+blueman-mechanism.service                  enabled         enabled
 bluetooth.service                          enabled         enabled
 colord.service                             static          -
 configure-printer@.service                 static          -
@@ -84,7 +85,6 @@ plymouth.service                           alias           -
 polkit.service                             static          -
 powertop.service                           enabled         enabled
 procps.service                             alias           -
-pulseaudio-enable-autospawn.service        masked          enabled
 quotaon.service                            static          -
 rc-local.service                           static          -
 rc.service                                 masked          enabled

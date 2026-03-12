@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cd "$HOME/system-map" || exit 1
 
 ./scripts/update-system-map.sh
@@ -15,12 +16,13 @@ echo
 echo "Reviewing changes..."
 git status
 echo
-git diff --stat
+git --no-pager diff --stat
 
 echo
 echo "Updating git repository..."
 
-git add outputs/server configs/server notes/server-purpose.md scripts/update-system-map.sh scripts/nightly-oneclick.sh CHANGES.md 2>/dev/null || true
+git add CHANGES.md ai-context.md outputs configs
+git add notes/server-purpose.md scripts/update-system-map.sh scripts/nightly-oneclick.sh 2>/dev/null || true
 
 git commit -m "Server snapshot $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || echo "No changes to commit"
 

@@ -41,3 +41,9 @@ server snapshots added
 added to launcher
  ./scripts/collect-system-info.sh
 ./scripts/export-ai-context.sh > ai-context.md
+
+## 2026-3-12
+added PipeWire audio stack
+added bluetooth
+added GQRX for srd radio
+added sdr_433 to decode sensors

@@ -9,6 +9,10 @@ bash
 bash-completion
 bind9-dnsutils
 bind9-host
+blueman
+bluetooth
+bluez
+bluez-tools
 bsdutils
 busybox
 bzip2
@@ -50,6 +54,7 @@ gettext-base
 git
 gnupg
 gpgv
+gqrx-sdr
 grep
 groff-base
 grub-common
@@ -151,6 +156,7 @@ libsemanage2
 libsepol2
 libslang2
 libsmartcols1
+libspa-0.2-bluetooth
 libss2
 libssl3
 libstdc++6
@@ -195,16 +201,21 @@ nodejs
 openssh-client
 os-prober
 passwd
+pavucontrol
 pciutils
 pcmciautils
 perl
 perl-base
+pipewire-audio
+pipewire-pulse
 powertop
 procps
 python3-reportbug
 readline-common
 reportbug
 rsync
+rtl-433
+rtl-sdr
 samba
 sed
 sensible-utils
@@ -238,6 +249,7 @@ wamerican
 wget
 whiptail
 wireless-tools
+wireplumber
 wpasupplicant
 xscreensaver
 xscreensaver-data

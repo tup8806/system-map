@@ -1,4 +1,5 @@
 Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                                                                                                       
+udp   UNCONN 0      0            0.0.0.0:52355      0.0.0.0:*    users:(("firefox-esr",pid=1419,fd=82)) uid:1000 ino:249549 sk:2001 cgroup:/user.slice/user-1000.slice/session-3.scope <->                                    
 udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=26)) uid:1000 ino:24761 sk:2 cgroup:/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service <->
 udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=24)) uid:1000 ino:24760 sk:3 cgroup:/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service <->
 tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*    ino:17325 sk:4 cgroup:/system.slice/ssh.service <->                                                                                                          

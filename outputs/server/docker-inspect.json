@@ -154,6 +154,16 @@
         },
         "Mounts": [
             {
+                "Type": "volume",
+                "Name": "a6acf4000fc80cb772c7d2f752c41518ab06ecacfd5823134ef420822089d424",
+                "Source": "/var/lib/docker/volumes/a6acf4000fc80cb772c7d2f752c41518ab06ecacfd5823134ef420822089d424/_data",
+                "Destination": "/i2p/.i2p",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
                 "Type": "bind",
                 "Source": "/home/tup/Downloads",
                 "Destination": "/i2p/downloads",
@@ -176,16 +186,6 @@
                 "Name": "e3794cae5d6d2f4b16a6fa84879314ddf61935246d66bc3ac8b41af8a747c9c2",
                 "Source": "/var/lib/docker/volumes/e3794cae5d6d2f4b16a6fa84879314ddf61935246d66bc3ac8b41af8a747c9c2/_data",
                 "Destination": "/i2psnark",
-                "Driver": "local",
-                "Mode": "",
-                "RW": true,
-                "Propagation": ""
-            },
-            {
-                "Type": "volume",
-                "Name": "a6acf4000fc80cb772c7d2f752c41518ab06ecacfd5823134ef420822089d424",
-                "Source": "/var/lib/docker/volumes/a6acf4000fc80cb772c7d2f752c41518ab06ecacfd5823134ef420822089d424/_data",
-                "Destination": "/i2p/.i2p",
                 "Driver": "local",
                 "Mode": "",
                 "RW": true,

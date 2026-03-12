@@ -1,11 +1,11 @@
-NEXT                        LEFT          LAST                        PASSED     UNIT                         ACTIVATES
-Wed 2026-03-11 21:34:03 CDT 31min left    Wed 2026-03-11 20:30:45 CDT 32min ago  anacron.timer                anacron.service
-Wed 2026-03-11 21:58:39 CDT 55min left    Tue 2026-03-10 21:58:39 CDT 23h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
-Thu 2026-03-12 00:00:00 CDT 2h 57min left Wed 2026-03-11 00:00:05 CDT 21h ago    dpkg-db-backup.timer         dpkg-db-backup.service
-Thu 2026-03-12 00:00:00 CDT 2h 57min left Wed 2026-03-11 00:00:05 CDT 21h ago    logrotate.timer              logrotate.service
-Thu 2026-03-12 02:33:30 CDT 5h 30min left Wed 2026-03-11 06:17:45 CDT 14h ago    man-db.timer                 man-db.service
-Sun 2026-03-15 03:10:50 CDT 3 days left   Sun 2026-03-08 03:10:40 CDT 3 days ago e2scrub_all.timer            e2scrub_all.service
-Mon 2026-03-16 01:33:03 CDT 4 days left   Mon 2026-03-09 00:43:05 CDT 2 days ago fstrim.timer                 fstrim.service
+NEXT                        LEFT        LAST                        PASSED       UNIT                         ACTIVATES
+Thu 2026-03-12 07:30:37 CDT 7h left     Wed 2026-03-11 23:32:20 CDT 44min ago    anacron.timer                anacron.service
+Thu 2026-03-12 08:04:30 CDT 7h left     Wed 2026-03-11 06:17:45 CDT 17h ago      man-db.timer                 man-db.service
+Thu 2026-03-12 21:58:55 CDT 21h left    Wed 2026-03-11 21:58:55 CDT 2h 17min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Fri 2026-03-13 00:00:00 CDT 23h left    Thu 2026-03-12 00:00:05 CDT 16min ago    dpkg-db-backup.timer         dpkg-db-backup.service
+Fri 2026-03-13 00:00:00 CDT 23h left    Thu 2026-03-12 00:00:05 CDT 16min ago    logrotate.timer              logrotate.service
+Sun 2026-03-15 03:10:32 CDT 3 days left Sun 2026-03-08 03:10:40 CDT 3 days ago   e2scrub_all.timer            e2scrub_all.service
+Mon 2026-03-16 01:14:50 CDT 4 days left Mon 2026-03-09 00:43:05 CDT 2 days ago   fstrim.timer                 fstrim.service
 
 7 timers listed.
 Pass --all to see loaded but inactive timers, too.
