@@ -47,6 +47,25 @@ Used for:
 - portable diagnostics
 - remote access
 
+------------------------------------------------------------
+Bluetooth
+------------------------------------------------------------
+
+Adapter
+Alps Electric Co., Ltd UGTZ4 Bluetooth
+
+USB ID
+044e:3001
+
+Controller Name
+toughbook
+
+Controller MAC
+04:76:6E:71:24:B9
+
+Service
+bluetooth.service (active)
+
 ## External Hardware
 
 Often connected to:
