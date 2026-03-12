@@ -79,7 +79,9 @@ ROM directory:
 
 ~/RetroPie/roms
 
+BIOS directory:
 
+~/RetroPie/BIOS
 ------------------------------------------------
 Network Services
 ------------------------------------------------
