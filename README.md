@@ -1,87 +1,164 @@
 # System Map
 
-This repository documents the hardware, software, and architecture of my personal home lab.
+This repository documents the structure and configuration of a personal home lab.
 
-Primary workstation:
-Panasonic Toughbook CF-31 (Mk1 rugged laptop)
+The goal is to maintain a clear map of the system so the environment can be:
 
-Primary server:
-Dell Optiplex 7010 running Docker services including Jellyfin.
+- understood quickly
+- rebuilt if necessary
+- expanded without losing track of how things work
 
-The goal of this repository is to allow the system to be **understood and rebuilt** from documentation and exported configuration snapshots.
-
----
-
-## Repository Structure
-
-notes/
-Human-written documentation explaining system purpose and architecture.
-
-outputs/
-Automatically generated system snapshots including hardware, software, and safe configuration exports.
-
-scripts/
-Automation scripts used to generate inventories and configuration exports.
-
-ai-context.md
-Condensed system snapshot intended as the primary entry point for AI tools.
+The repository combines human documentation with automated system snapshots.
 
 ---
 
-## Key Hardware
+# Lab Overview
 
-**Laptop**
-Panasonic Toughbook CF-31  
-Intel Core i5-520M  
-8GB DDR3  
-2.5" SATA SSD  
-WWAN module: Sierra Wireless MC8355  
-RTL-SDR USB receiver for radio experiments.
+The lab currently consists of two primary machines.
 
-**Server**
-Dell Optiplex 7010  
-Media server and home lab services.
-
-**Embedded Devices**
-Heltec WiFi LoRa 32 V3 boards (ESP32 + LoRa).
+| Machine | Role |
+|-------|------|
+| Panasonic Toughbook CF-31 | Portable workstation used for administration and diagnostics |
+| Dell Optiplex 7010 | Home server providing media services, infrastructure services, and retro gaming |
 
 ---
 
-## Automation
+# Server Roles
 
-System snapshots are generated using scripts located in:
-scripts/
+The server performs two major functions.
 
+### Infrastructure Services
+- Jellyfin media server
+- Tdarr media processing
+- Uptime Kuma monitoring
+- Portainer Docker management
+- Samba file sharing
+- SSH administration
+- OpenClaw AI gateway
 
-Key scripts include:
-
-- export-hardware-inventory.sh
-- export-software-inventory.sh
-- export-configs.sh
-- export-ai-context.sh
-
-These scripts populate the `outputs/` directory.
-
----
-
-## AI Usage
-
-AI tools should start by reading:
-ai-context.md
-
-Then reference:
-notes/
-outputs/hardware/
-outputs/software/
-outputs/configs/
+### Entertainment System
+- EmulationStation frontend
+- RetroPie emulator environment
+- console game libraries
+- Xbox controller support
 
 ---
 
-## Purpose
+# Repository Structure
 
-This repository exists to:
+The repository is divided into three major documentation layers.
 
-- document my hardware lab
-- maintain reproducible system configuration
-- support troubleshooting
-- allow AI tools to understand the environment
+### Notes
+
+Human-written documentation explaining system design and purpose.
+
+Examples:
+notes/hardware/
+notes/network-topology.md
+notes/storage-layout.md
+notes/server-services.md
+notes/server-applications.md
+
+### Outputs
+
+Automatically generated system snapshots such as:
+
+- hardware scans
+- package lists
+- service inventories
+- network information
+
+These files reflect the **current state of the machines**.
+
+### Scripts
+
+Automation used to collect system information and update the repository.
+
+These scripts allow the documentation to stay synchronized with the real systems.
+
+---
+
+# Important Documentation
+
+## Lab Inventory
+High-level overview of all machines.
+
+INVENTORY.md
+
+---
+
+## Hardware Documentation
+notes/hardware/toughbook.md
+notes/hardware/server.md
+
+Describes physical hardware including CPU, storage, networking, and peripherals.
+
+---
+
+## Storage Layout
+notes/storage-layout.md
+
+Explains:
+
+- server disk layout
+- media storage
+- RetroPie game storage
+- future storage plans
+
+---
+
+## Network Topology
+notes/network-topology.md
+
+Documents:
+
+- LAN structure
+- server IP addressing
+- Docker network layout
+
+---
+
+## Server Services
+notes/server-services.md
+
+Lists services running on the server and how they are accessed.
+
+---
+
+## Server Applications
+notes/server-applications.md
+
+Documents interactive software such as:
+
+- EmulationStation
+- RetroPie
+- game controllers
+
+---
+
+# Design Philosophy
+
+This repository separates documentation into two types:
+
+**Human documentation**
+- explains why things are configured the way they are
+
+**Automated outputs**
+- record the actual system state
+
+This prevents the documentation from drifting away from reality as the system evolves.
+
+---
+
+# Purpose
+
+This repository acts as a technical reference for the home lab.
+
+It allows the system to be:
+
+- rebuilt if hardware fails
+- expanded with new services
+- understood by future maintainers
+- analyzed by automation or AI tools
+
+The intent is to keep the system understandable even years later.
