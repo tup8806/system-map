@@ -1,9 +1,9 @@
 # System Map Context
 
-Updated: Sat Mar 14 10:52:27 PM CDT 2026
+Updated: Sat Mar 14 11:08:55 PM CDT 2026
 
 ## Latest Commit
-f37a1b5 Add persistent hardware documentation section to ai-context generator
+a7054d6 Add repository overview for humans and AI
 
 ## Network
 ### Network
