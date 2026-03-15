@@ -48,9 +48,14 @@ added bluetooth
 added GQRX for srd radio
 added sdr_433 to decode sensors
 
-## 2026-3-15a
+## 2026-3-15 a 
 ai impovement of the repo over the last 24 hr
 test of launcher
 
-## 2026-3-15b
+## 2026-3-15 b
 test of desktop icon
+
+## 2026-3-15 c
+added
+one script for self-state
+one script for network discovery

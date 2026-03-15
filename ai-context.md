@@ -1,9 +1,9 @@
 # System Map Context
 
-Updated: Sun Mar 15 12:31:40 PM CDT 2026
+Updated: Sun Mar 15 12:58:49 PM CDT 2026
 
 ## Latest Commit
-d8d6aeb Toughbook auto snapshot 2026-03-15 12:25
+7405b06 Fix Toughbook nightly scripts to use existing network capture scripts
 
 ## Network
 ### Network

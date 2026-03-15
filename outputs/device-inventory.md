@@ -1,6 +1,6 @@
 # Network Device Inventory
 
-Generated: Sun Mar 15 12:31:40 PM CDT 2026
+Generated: Sun Mar 15 12:58:49 PM CDT 2026
 
 ## Known Devices
 
@@ -17,6 +17,8 @@ Generated: Sun Mar 15 12:31:40 PM CDT 2026
 
 - 192.168.4.1
 - 192.168.4.23
+- 192.168.4.59
+- 192.168.4.75
 - 192.168.4.76
 - 192.168.4.77
 - 192.168.4.82
