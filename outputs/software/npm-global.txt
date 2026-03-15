@@ -1,0 +1,5 @@
+/home/tup/.npm-global/lib
+├── @google/gemini-cli@0.31.0
+├── npm@11.11.0
+└── openclaw@2026.3.2
+

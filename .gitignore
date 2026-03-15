@@ -12,3 +12,35 @@ node_modules/
 __pycache__/
 .cache/
 outputs/*.raw
+# Sensitive config that should never be committed
+outputs/configs/network/NetworkManager/system-connections/
+outputs/configs/system/etc-apt/auth.conf.d/
+outputs/configs/ssh/etc-ssh/ssh_host_*_key
+outputs/configs/ssh/etc-ssh/ssh_host_*_key.pub
+# OpenClaw token-bearing service files
+outputs/configs/user-config/home-config/systemd/user/openclaw-gateway.service
+outputs/configs/user-config/home-config/systemd/user/default.target.wants/openclaw-gateway.service
+# Secrets and private machine identity
+outputs/configs/network/NetworkManager/system-connections/
+outputs/configs/system/etc-apt/auth.conf.d/
+outputs/configs/ssh/etc-ssh/ssh_host_*_key
+outputs/configs/ssh/etc-ssh/ssh_host_*_key.pub
+
+# Token-bearing OpenClaw user service files
+outputs/configs/user-config/home-config/systemd/user/openclaw-gateway.service
+outputs/configs/user-config/home-config/systemd/user/default.target.wants/openclaw-gateway.service
+
+# Extra protection in case user-systemd exports contain live secrets
+outputs/configs/services/user-systemd/
+# Sensitive or noisy config exports
+outputs/configs/user-config/home-config/dconf/
+outputs/configs/user-config/home-config/qBittorrent/
+outputs/configs/user-config/home-config/pulse/
+outputs/configs/user-config/home-config/systemd/
+
+# Already-known sensitive areas
+outputs/configs/network/NetworkManager/system-connections/
+outputs/configs/system/etc-apt/auth.conf.d/
+outputs/configs/ssh/etc-ssh/ssh_host_*_key
+outputs/configs/ssh/etc-ssh/ssh_host_*_key.pub
+outputs/configs/services/user-systemd/

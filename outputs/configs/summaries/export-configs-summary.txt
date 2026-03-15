@@ -1,0 +1,25 @@
+Hostname: toughbook
+Exported: Sat Mar 14 10:51:01 PM CDT 2026
+
+User config captured from:
+- /home/tup/.config
+- /home/tup/.bashrc
+- /home/tup/.profile
+- /home/tup/.gitconfig
+
+System config captured from:
+- /etc/fstab
+- /etc/hostname
+- /etc/hosts
+- /etc/default
+- /etc/environment
+- /etc/resolv.conf
+- /etc/NetworkManager
+- /etc/network
+- /etc/ssh
+- /etc/systemd/system
+- /etc/apt
+
+Notes:
+- Some files may be absent depending on the system.
+- Some copied configs may contain secrets and should be reviewed before pushing.

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Media Mover
+Exec=/home/tup/media-mover.sh
+Icon=folder-videos
+Terminal=false
+Type=Application
+Categories=Utility;
+X-XFCE-Source=file:///home/tup/.local/share/applications/media-mover.desktop

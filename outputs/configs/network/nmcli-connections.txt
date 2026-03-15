@@ -1,0 +1,5 @@
+NAME                UUID                                  TYPE      DEVICE  
+Tupper1             d90aa4b8-7ff4-4384-b8f0-a385277f3116  wifi      wlp10s0 
+lo                  1fcd86ce-65e0-4a91-a9bb-75eff9614c67  loopback  lo      
+docker0             1683b1c2-5e87-4d67-ac5d-fcf1ca07c6e3  bridge    docker0 
+Wired connection 1  db865ee4-3fcd-36f8-a940-2f0bd38ed534  ethernet  --      

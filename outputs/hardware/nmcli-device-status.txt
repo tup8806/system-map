@@ -1,0 +1,4 @@
+DEVICE   TYPE      STATE                   CONNECTION 
+wlp10s0  wifi      connected               Tupper1    
+lo       loopback  connected (externally)  lo         
+enp0s25  ethernet  unavailable             --         

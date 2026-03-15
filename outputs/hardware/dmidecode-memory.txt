@@ -1,0 +1,82 @@
+# dmidecode 3.4
+Getting SMBIOS data from sysfs.
+SMBIOS 2.6 present.
+
+Handle 0x001F, DMI type 16, 15 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: None
+	Maximum Capacity: 8 GB
+	Error Information Handle: Not Provided
+	Number Of Devices: 2
+
+Handle 0x0021, DMI type 17, 28 bytes
+Memory Device
+	Array Handle: 0x001F
+	Error Information Handle: Not Provided
+	Total Width: 64 bits
+	Data Width: 64 bits
+	Size: 4 GB
+	Form Factor: SODIMM
+	Set: None
+	Locator: DIMM 1
+	Bank Locator: DIMM 1
+	Type: DDR3
+	Type Detail: Synchronous
+	Speed: 1067 MT/s
+	Manufacturer: Not Specified
+	Serial Number: 27BA3C7E
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Rank: Unknown
+
+Handle 0x0023, DMI type 17, 28 bytes
+Memory Device
+	Array Handle: 0x001F
+	Error Information Handle: Not Provided
+	Total Width: 64 bits
+	Data Width: 64 bits
+	Size: 4 GB
+	Form Factor: SODIMM
+	Set: None
+	Locator: DIMM 2
+	Bank Locator: DIMM 2
+	Type: DDR3
+	Type Detail: Synchronous
+	Speed: 1067 MT/s
+	Manufacturer: Not Specified
+	Serial Number: 2AC808A5
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Rank: Unknown
+
+Handle 0x0025, DMI type 16, 15 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: Flash Memory
+	Error Correction Type: None
+	Maximum Capacity: 8 MB
+	Error Information Handle: Not Provided
+	Number Of Devices: 1
+
+Handle 0x0027, DMI type 17, 28 bytes
+Memory Device
+	Array Handle: 0x0025
+	Error Information Handle: Not Provided
+	Total Width: 8 bits
+	Data Width: 8 bits
+	Size: 8 MB
+	Form Factor: TSOP
+	Set: None
+	Locator: Flash ROM
+	Bank Locator: Flash ROM
+	Type: Flash
+	Type Detail: Non-Volatile
+	Speed: Unknown
+	Manufacturer: Not Specified
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Rank: Unknown
+

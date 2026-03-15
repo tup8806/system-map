@@ -1,9 +1,9 @@
 # System Map Context
 
-Updated: Sat Mar 14 09:29:45 PM CDT 2026
+Updated: Sat Mar 14 10:52:27 PM CDT 2026
 
 ## Latest Commit
-a3eed47 Add durable hardware documentation for Toughbook and related devices
+f37a1b5 Add persistent hardware documentation section to ai-context generator
 
 ## Network
 ### Network
@@ -85,3 +85,34 @@ zram0    3.8G                       [SWAP]
 - notes/hardware/secondary-compute.md
 - notes/hardware/embedded-radio.md
 - notes/hardware/server.md
+
+## Detailed Inventory Outputs
+- outputs/hardware/uname.txt
+- outputs/hardware/lscpu.txt
+- outputs/hardware/lsblk.txt
+- outputs/hardware/lspci.txt
+- outputs/hardware/lsusb.txt
+- outputs/hardware/rfkill.txt
+- outputs/hardware/nmcli-device-status.txt
+- outputs/hardware/nmcli-active-connections.txt
+- outputs/hardware/bluetooth-controllers.txt
+- outputs/hardware/dmidecode-system.txt
+- outputs/hardware/dmidecode-bios.txt
+- outputs/hardware/dmidecode-baseboard.txt
+- outputs/hardware/dmidecode-memory.txt
+- outputs/software/dpkg-packages.txt
+- outputs/software/apt-manual.txt
+- outputs/software/systemd-unit-files.txt
+- outputs/software/systemd-running-services.txt
+- outputs/software/docker-ps-a.txt
+- outputs/software/snap-list.txt
+- outputs/software/pip3-freeze.txt
+- outputs/software/npm-global.txt
+
+## Configuration Snapshots
+- outputs/configs/summaries/export-configs-summary.txt
+- outputs/configs/user-config/
+- outputs/configs/system/
+- outputs/configs/network/
+- outputs/configs/services/
+- outputs/configs/ssh/

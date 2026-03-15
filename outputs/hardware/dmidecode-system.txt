@@ -1,0 +1,26 @@
+# dmidecode 3.4
+Getting SMBIOS data from sysfs.
+SMBIOS 2.6 present.
+
+Handle 0x0001, DMI type 1, 27 bytes
+System Information
+	Manufacturer: Panasonic Corporation
+	Product Name: CF-31AGAEA2M
+	Version: 001
+	Serial Number: 0HKYA16220
+	UUID: b0e1251f-5b77-775c-9644-05c2da026e3c
+	Wake-up Type: Power Switch
+	SKU Number: CF-31AGAEA2M
+	Family: CF31-1
+
+Handle 0x001D, DMI type 12, 5 bytes
+System Configuration Options
+	Option 1: DSN:TPBF2503130020306396TEAMT253512G
+	Option 2: DSN:NT4GC64B8HG0NS-CG 7E3CBA27      
+	Option 3: DSN:CF-VZSU46   014112072010        
+	Option 4: SMI:00B2E6
+
+Handle 0x002D, DMI type 32, 20 bytes
+System Boot Information
+	Status: No errors detected
+
