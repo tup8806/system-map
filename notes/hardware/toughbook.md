@@ -1,76 +1,175 @@
 # Panasonic Toughbook CF-31
 
-## Role
-Primary rugged portable computer and possible host platform for future dual-computer integration.
+Rugged field laptop used as the primary administration and experimentation machine for the home lab.
 
-## Model
-- Panasonic Toughbook CF-31
-- Mk1 generation
+---
 
-## CPU
-- Intel Core i5-520M
-- 2 cores / 4 threads
-- Base clock: 2.40 GHz
-- Socket: rPGA988A
-- Removable CPU
+# System Overview
 
-## Memory
-- 8 GB DDR3 installed
-- 2 × 4 GB DDR3 SO-DIMM
-- 1067 MT/s (DDR3-1066)
-- Platform maximum: 8 GB
+Model: Panasonic Toughbook CF-31  
+Hostname: toughbook  
+Operating System: Debian (XFCE desktop)
 
-## Storage
-- 2.5-inch SATA SSD installed
-- Original HDD replaced
+Primary roles:
 
-## Ports and I/O
-- HDMI output
-- Gigabit Ethernet (RJ-45)
-- 2 × USB 2.0
-- RS-232 serial port (DB-9)
-- DC barrel power connector
+- server administration
+- network diagnostics
+- portable Linux experimentation
+- hardware tuning and testing
+- command-line AI tooling
 
-## Expansion
-- ExpressCard slot
-- PCMCIA slot
-- SD card reader
+---
 
-## Wireless / Radio Hardware
+# CPU
 
-### WWAN Module
-- Sierra Wireless MC8355
+Intel Core i5 M 520  
+Architecture: x86_64  
+Cores: 2  
+Threads: 4  
+Base clock: 2.40 GHz  
+Virtualization: Intel VT-x supported
 
-### Capabilities
-- Cellular modem
-- Integrated GPS receiver
-- SIM card slot
-- Dual antenna connectors
+This is a 1st generation Intel Core mobile processor (Arrandale).
 
-### External Antenna Ports
-External ports labeled:
-- EXT ANT
-- GPS
+---
 
-These feed internal coax lines to the WWAN / GPS module.
+# Memory
 
-## Physical Features
-- Bottom docking connector for vehicle dock systems
-- Removable rugged drive bay
-- Modular internal access panels
-- Removable battery (~15–16 V output)
-- Magnesium alloy rugged chassis
-- Multiple sealed port covers
-- Field / police / vehicle-oriented design
+Installed RAM: 8 GB DDR3
 
-## Project Relevance
-This machine is being used both as:
-1. a rugged standalone field computer, and
-2. a possible host shell for a second modern x86 system while preserving original Toughbook functionality.
+Memory usage is typically managed with:
 
-## Integration Interest
-Long-term interest is in adding or attaching a modern compute platform while preserving:
-- original Toughbook motherboard and boot capability
-- rugged portability
-- dual-computer operation
-- full PC software compatibility
+- zram swap
+- standard disk swap partition
+
+---
+
+# Storage
+
+Primary Drive
+
+Drive model: TEAM T253512GB  
+Capacity: 512 GB SATA SSD  
+
+Partition layout:
+
+/dev/sda1   root filesystem  
+/dev/sda5   swap partition
+
+The system also uses a zram compressed RAM swap device.
+
+---
+
+# Graphics
+
+Integrated Intel graphics (Arrandale generation).
+
+Provided by the CPU's integrated GPU.
+
+Used for:
+
+- XFCE desktop
+- basic GPU acceleration
+- light graphical workloads
+
+---
+
+# Network Hardware
+
+Ethernet
+
+Intel 82577LM Gigabit Network Controller
+
+Wireless
+
+Intel Centrino Advanced-N 6200 Wi-Fi adapter
+
+---
+
+# Bluetooth
+
+Internal Bluetooth adapter detected as:
+
+ALPS UGTZ4 Bluetooth module
+
+Controller address:
+
+04:76:6E:71:24:B9
+
+Bluetooth is used primarily for:
+
+- audio devices
+- wireless peripherals
+
+---
+
+# Cellular Modem
+
+Internal cellular modem detected:
+
+Qualcomm Gobi 2000
+
+This hardware originally supported mobile broadband connectivity in field deployments.
+
+Current usage in the lab environment is minimal.
+
+---
+
+# Other Hardware Components
+
+Touchscreen
+
+Fujitsu USB touch panel controller.
+
+Expansion / peripheral controllers
+
+Ricoh CardBus bridge  
+Ricoh SD card controller
+
+These provide legacy expansion capability.
+
+---
+
+# USB Devices (Typical)
+
+Logitech Nano Receiver (wireless keyboard/mouse)
+
+Bluetooth controller
+
+Integrated USB hubs
+
+---
+
+# Hardware Scans
+
+Raw hardware scans are stored in the repository.
+
+CPU information:
+
+outputs/cpu.txt
+
+Storage layout:
+
+outputs/storage.txt
+
+PCI device list:
+
+outputs/lspci.txt
+
+USB device list:
+
+outputs/lsusb.txt
+
+---
+
+# Notes
+
+The Toughbook serves as the portable control machine for the lab.
+
+While older hardware, it remains extremely reliable due to:
+
+- rugged construction
+- excellent Linux compatibility
+- stable Intel networking hardware
+
+The machine is intentionally kept simple and well documented so it can be repaired or rebuilt easily.
