@@ -1,25 +1,28 @@
 digraph homelab {
+    rankdir=LR;
+    graph [label="Home Lab Network Map", labelloc=top, fontsize=20];
+    node [shape=box, style=rounded];
 
-rankdir=LR
-node [shape=box]
+    router [label="Eero Router\n192.168.4.1"];
+    server [label="Server\nDell Optiplex 7010\nhostname: tup\n192.168.4.76"];
+    toughbook [label="Toughbook\nPanasonic CF-31\nhostname: toughbook\nWi-Fi client"];
+    
+    jellyfin [label="Jellyfin\n:8096"];
+    tdarr [label="Tdarr\n:8265-8266"];
+    uptimekuma [label="Uptime Kuma\n:3001"];
+    portainer [label="Portainer\n:9000"];
+    samba [label="Samba\n:139, :445"];
+    ssh [label="SSH\n:22"];
+    openclaw [label="OpenClaw Gateway\nlocalhost only\n127.0.0.1:18789-18792"];
 
-router [label="Router\n192.168.4.1"]
+    router -> server [label="Ethernet"];
+    router -> toughbook [label="Wi-Fi"];
 
-server [label="Server\nOptiplex 7010\n192.168.4.76"]
-
-toughbook [label="Toughbook\nAdmin Workstation"]
-
-jellyfin [label="Jellyfin\n:8096"]
-tdarr [label="Tdarr\n:8265-8266"]
-portainer [label="Portainer\n:9000"]
-uptime [label="Uptime Kuma\n:3001"]
-
-router -> server
-router -> toughbook
-
-server -> jellyfin
-server -> tdarr
-server -> portainer
-server -> uptime
-
+    server -> jellyfin;
+    server -> tdarr;
+    server -> uptimekuma;
+    server -> portainer;
+    server -> samba;
+    server -> ssh;
+    server -> openclaw;
 }
