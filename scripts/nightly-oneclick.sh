@@ -5,7 +5,13 @@ cd "$HOME/system-map" || exit 1
 ./scripts/update-system-map.sh
 ./scripts/collect-system-info.sh
 ./scripts/export-ai-context.sh > ai-context.md
-
+./scripts/generate-system-summary.sh
+./scripts/generate-lab-dashboard.sh
+./scripts/log-lab-state.sh
+./scripts/network-discovery.sh
+./scripts/network-discovery.sh
+./scripts/generate-device-inventory.sh
+./scripts/detect-new-devices.sh
 echo
 echo "Opening CHANGES.md for tonight's notes..."
 sleep 1

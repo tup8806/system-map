@@ -1,0 +1,10 @@
+# Nmap 7.93 scan initiated Sun Mar 15 02:01:59 2026 as: nmap -sn -oN /home/tup/system-map/outputs/network-scan.txt 192.168.4.0/22
+Nmap scan report for 192.168.4.1
+Host is up (0.0050s latency).
+MAC Address: 44:AC:85:41:DA:F2 (Unknown)
+Nmap scan report for 192.168.4.23
+Host is up (0.049s latency).
+MAC Address: 64:E0:03:D2:8F:C8 (Hui Zhou Gaoshengda Technology)
+Nmap scan report for 192.168.4.82
+Host is up.
+# Nmap done at Sun Mar 15 02:02:03 2026 -- 1024 IP addresses (3 hosts up) scanned in 4.03 seconds

@@ -1,0 +1,3 @@
+digraph homelab {
+rankdir=LR;
+node [shape=box, style=rounded];

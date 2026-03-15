@@ -1,0 +1,15 @@
+from,to
+internet,router
+router,server
+router,toughbook
+router,mesh
+router,roku
+router,pixel
+router,unknown
+server,jellyfin
+server,tdarr
+server,uptime
+server,portainer
+server,samba
+server,ssh
+server,docker

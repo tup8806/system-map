@@ -1,0 +1,16 @@
+id,label
+internet,Internet
+router,Eero Router 192.168.4.1
+server,Optiplex Server (tup) 192.168.4.76
+toughbook,Toughbook 192.168.4.82
+mesh,Eero Mesh Node 192.168.4.77
+roku,Roku TV 192.168.4.23
+pixel,Pixel 10 192.168.4.59
+unknown,Unknown Device 192.168.4.75
+jellyfin,Jellyfin :8096
+tdarr,Tdarr :8265-8266
+uptime,Uptime Kuma :3001
+portainer,Portainer :9000
+samba,Samba :139/445
+ssh,SSH :22
+docker,Docker Networks
