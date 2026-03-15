@@ -55,11 +55,17 @@ The Toughbook is connected by Wi-Fi.
 
 ## Other Observed Network Devices
 
-### AirPlay-Capable Media Device
+### Roku TV / Media Device
 - IP address: `192.168.4.23`
-- Open TCP port: `7000`
-- Service detection: `AirTunes rtspd 377.40.00`
-- Working identification: likely a smart TV, speaker, or streaming device with AirPlay / AirTunes support
+- Open TCP ports:
+  - `7000`
+  - `8060`
+- Service evidence:
+  - `7000` responded as `AirTunes rtspd 377.40.00`
+  - `8060` is commonly associated with Roku devices
+- Identification: Roku TV or Roku-based media device with AirPlay support enabled
+
+This device is a household media endpoint rather than core lab infrastructure.
 
 ### Google Pixel 10
 - IP address: `192.168.4.59`
@@ -113,7 +119,7 @@ Eero Router / Gateway
    │          └── 172.22.0.0/16
    │
    ├── Toughbook ................... 192.168.4.82
-   ├── Eero mesh node? ............. 192.168.4.77
-   ├── AirPlay media device ........ 192.168.4.23
+   ├── Eero mesh node ............. 192.168.4.77
+   ├── Roku TV / media device ........ 192.168.4.23
    ├── google pixel 10 ........... 192.168.4.59
    └── inactive/unknown device ..... 192.168.4.75
