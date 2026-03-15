@@ -1,11 +1,26 @@
 # System Map Context
 
-Updated: Sun Mar 15 01:52:05 PM CDT 2026
+Updated: Sun Mar 15 02:18:49 PM CDT 2026
 
 ## Latest Commit
-5a3f4ab Update lab status dashboard
+a4cbf30 Add stable IDs and clean up system-map structure
 
-## Network
+## Core Documentation
+- README.md
+- AI_README.md
+- INVENTORY.md
+- notes/lab-architecture.md
+- notes/machine-roles.md
+- notes/network-topology.md
+- notes/server-overview.md
+- notes/server-purpose.md
+- notes/server-services.md
+- notes/storage-layout.md
+- notes/toughbook-purpose.md
+- notes/hardware/toughbook.md
+- notes/hardware/server.md
+
+## network.txt
 ### Network
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s25          DOWN           
@@ -17,101 +32,72 @@ default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600
 172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
 192.168.4.0/22 dev wlp10s0 proto kernel scope link src 192.168.4.82 metric 600 
 
-## Storage
+## hardware.txt
+### Hardware
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           36 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Core(TM) i5 CPU       M 520  @ 2.40GHz
+CPU family:                              6
+Model:                                   37
+Thread(s) per core:                      2
+Core(s) per socket:                      2
+Socket(s):                               1
+Stepping:                                2
+Frequency boost:                         enabled
+CPU(s) scaling MHz:                      81%
+CPU max MHz:                             2400.0000
+CPU min MHz:                             1199.0000
+BogoMIPS:                                4787.88
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 popcnt aes lahf_lm pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida arat flush_l1d
+Virtualization:                          VT-x
+L1d cache:                               64 KiB (2 instances)
+L1i cache:                               64 KiB (2 instances)
+L2 cache:                                512 KiB (2 instances)
+L3 cache:                                3 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             KVM: Mitigation: VMX disabled
+Vulnerability L1tf:                      Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable
+Vulnerability Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT vulnerable
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Unknown: No mitigations
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+NAME     SIZE FSTYPE MOUNTPOINT MODEL
+sda    476.9G                   TEAM T253512GB
+├─sda1   476G ext4   /          
+├─sda2     1K                   
+└─sda5   975M swap   [SWAP]     
+zram0    3.8G        [SWAP]     
+
+## services.txt
+### Running services
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+## storage.txt
 ### Storage
 Filesystem          Size  Used Avail Use% Mounted on
 udev                3.8G     0  3.8G   0% /dev
 tmpfs               774M  1.5M  773M   1% /run
-/dev/sda1           468G   65G  380G  15% /
+/dev/sda1           468G   66G  379G  15% /
 tmpfs               3.8G     0  3.8G   0% /dev/shm
 tmpfs               5.0M  8.0K  5.0M   1% /run/lock
 tmpfs               774M  2.5M  772M   1% /run/user/1000
 tup@192.168.4.76:/  457G  244G  190G  57% /mnt/myserver
 
-## Local Services
-### Running services
-CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-
-## Server Docker Containers
-CONTAINER ID   IMAGE         COMMAND          CREATED       STATUS                     PORTS     NAMES
-980722499c61   geti2p/i2p    "/startapp.sh"   11 days ago   Exited (137) 11 days ago             i2p
-8cbc02dde049   hello-world   "/hello"         11 days ago   Exited (0) 11 days ago               sharp_wilson
-
-## Server Running Services
-  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
-  bluetooth.service         loaded active running Bluetooth service
-  colord.service            loaded active running Manage, Install and Generate Color Profiles
-  containerd.service        loaded active running containerd container runtime
-  cron.service              loaded active running Regular background program processing daemon
-  dbus.service              loaded active running D-Bus System Message Bus
-  docker.service            loaded active running Docker Application Container Engine
-  getty@tty1.service        loaded active running Getty on tty1
-  keyd.service              loaded active running key remapping daemon
-  lightdm.service           loaded active running Light Display Manager
-  NetworkManager.service    loaded active running Network Manager
-  polkit.service            loaded active running Authorization Manager
-  rtkit-daemon.service      loaded active running RealtimeKit Scheduling Policy Service
-  smartmontools.service     loaded active running Self Monitoring and Reporting Technology (SMART) Daemon
-  ssh.service               loaded active running OpenBSD Secure Shell server
-  systemd-hostnamed.service loaded active running Hostname Service
-  systemd-journald.service  loaded active running Journal Service
-  systemd-logind.service    loaded active running User Login Management
-  systemd-timesyncd.service loaded active running Network Time Synchronization
-  systemd-udevd.service     loaded active running Rule-based Manager for Device Events and Files
-  tor@default.service       loaded active running Anonymizing overlay network for TCP
-  udisks2.service           loaded active running Disk Manager
-  upower.service            loaded active running Daemon for power management
-  user@1000.service         loaded active running User Manager for UID 1000
-  wpa_supplicant.service    loaded active running WPA supplicant
-
-LOAD   = Reflects whether the unit definition was properly loaded.
-ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
-SUB    = The low-level unit activation state, values depend on unit type.
-24 loaded units listed.
-
-## Server Storage
-NAME     SIZE FSTYPE FSAVAIL FSUSE% MOUNTPOINT MODEL
-sda    476.9G                                  TEAM T253512GB
-├─sda1   476G ext4    379.1G    14% /          
-├─sda2     1K                                  
-└─sda5   975M swap                  [SWAP]     
-zram0    3.8G                       [SWAP]     
-
-
-## Hardware Documentation
-- notes/hardware/overview.md
-- notes/hardware/toughbook.md
-- notes/hardware/secondary-compute.md
-- notes/hardware/embedded-radio.md
-- notes/hardware/server.md
-
-## Detailed Inventory Outputs
-- outputs/hardware/uname.txt
-- outputs/hardware/lscpu.txt
-- outputs/hardware/lsblk.txt
-- outputs/hardware/lspci.txt
-- outputs/hardware/lsusb.txt
-- outputs/hardware/rfkill.txt
-- outputs/hardware/nmcli-device-status.txt
-- outputs/hardware/nmcli-active-connections.txt
-- outputs/hardware/bluetooth-controllers.txt
-- outputs/hardware/dmidecode-system.txt
-- outputs/hardware/dmidecode-bios.txt
-- outputs/hardware/dmidecode-baseboard.txt
-- outputs/hardware/dmidecode-memory.txt
-- outputs/software/dpkg-packages.txt
-- outputs/software/apt-manual.txt
-- outputs/software/systemd-unit-files.txt
-- outputs/software/systemd-running-services.txt
-- outputs/software/docker-ps-a.txt
-- outputs/software/snap-list.txt
-- outputs/software/pip3-freeze.txt
-- outputs/software/npm-global.txt
-
-## Configuration Snapshots
-- outputs/configs/summaries/export-configs-summary.txt
-- outputs/configs/user-config/
-- outputs/configs/system/
-- outputs/configs/network/
-- outputs/configs/services/
-- outputs/configs/ssh/
