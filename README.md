@@ -47,6 +47,63 @@ The server performs two major functions.
 # Repository Structure
 
 The repository is divided into three major documentation layers.
+## Current Lab Layout
+
+### Admin Workstation
+Panasonic Toughbook CF-31 running Debian XFCE
+
+Used for:
+- administration
+- network scanning
+- generating diagrams
+- editing repo scripts
+
+### Server
+Dell Optiplex 7010
+- CPU: i5-3470
+- RAM: 16 GB
+- IP: 192.168.4.76
+
+Runs:
+- Jellyfin
+- Tdarr
+- Portainer
+- Uptime-Kuma
+- EmulationStation / RetroPie
+
+### Network
+Subnet:
+- 192.168.4.0/22
+
+Known devices:
+- 192.168.4.1 router
+- 192.168.4.23 Roku TV
+- 192.168.4.59 Pixel phone
+- 192.168.4.76 server
+- 192.168.4.77 mesh node
+- 192.168.4.82 toughbook
+
+## File Ownership Rules
+
+To avoid Git conflicts:
+
+### Toughbook generates
+- network scans
+- device inventory
+- network diagrams
+
+### Server generates
+- configs/server-services.csv
+
+## Git Workflow
+
+Before editing:
+git pull --rebase origin main
+
+After editing:
+git add
+git commit
+git push
 
 ### Notes
 

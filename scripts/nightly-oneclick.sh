@@ -8,6 +8,7 @@ git pull --rebase origin main
 
 echo "Exporting live server services..."
 ./scripts/export-docker-services.sh
+./scripts/export-disk-usage.sh
 
 echo "Committing server state..."
 
