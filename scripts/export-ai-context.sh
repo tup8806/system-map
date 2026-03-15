@@ -35,3 +35,10 @@ echo
 echo "## Server Storage"
 cat "$BASE/outputs/server/storage.txt" 2>/dev/null || echo "No server storage snapshot"
 echo
+echo
+echo "## Hardware Documentation"
+echo "- notes/hardware/overview.md"
+echo "- notes/hardware/toughbook.md"
+echo "- notes/hardware/secondary-compute.md"
+echo "- notes/hardware/embedded-radio.md"
+echo "- notes/hardware/server.md"

@@ -1,9 +1,9 @@
 # System Map Context
 
-Updated: Thu Mar 12 12:27:40 PM CDT 2026
+Updated: Sat Mar 14 09:29:45 PM CDT 2026
 
 ## Latest Commit
-4cdcda2 Server snapshot 2026-03-12 00:20
+a3eed47 Add durable hardware documentation for Toughbook and related devices
 
 ## Network
 ### Network
@@ -78,9 +78,10 @@ sda    476.9G                                  TEAM T253512GB
 └─sda5   975M swap                  [SWAP]     
 zram0    3.8G                       [SWAP]     
 
+
 ## Hardware Documentation
-See detailed hardware notes in:
+- notes/hardware/overview.md
 - notes/hardware/toughbook.md
 - notes/hardware/secondary-compute.md
 - notes/hardware/embedded-radio.md
-- notes/hardware/overview.md
+- notes/hardware/server.md
