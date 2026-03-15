@@ -1,25 +1,49 @@
-# Inventory
+# Lab Inventory
 
-## Machine
-- Hostname: toughbook
-- OS: Debian
-- Desktop: XFCE
-- Kernel: see outputs/system-info.txt
+High-level inventory of the machines and infrastructure in this home lab.
 
-## Hardware
-- CPU: see outputs/cpu.txt
-- RAM: see outputs/memory.txt
-- Storage: see outputs/storage.txt
-- GPU: integrated graphics
+Detailed hardware scans, package lists, and system state snapshots are stored in the `outputs/` directory.
 
-## Main Role
+---
+
+# Systems
+
+| Device | Hostname | Role | OS | Notes |
+|------|------|------|------|------|
+| Panasonic Toughbook CF-31 | toughbook | Portable workstation / lab control machine | Debian (XFCE) | Used for administration, diagnostics, and development |
+| Dell Optiplex 7010 | server | Home server | Debian | Runs media services and self-hosted infrastructure |
+
+---
+
+# Toughbook CF-31
+
+## Role
+
 Portable Debian workstation used for:
-- home server administration
-- network diagnostics
-- hardware and power tuning
-- portable AI command-line tools
 
-## Major Software
+- server administration
+- network diagnostics
+- hardware tuning and power testing
+- portable Linux experimentation
+- command-line AI tooling
+
+## Hardware Summary
+
+CPU: see outputs/cpu.txt  
+RAM: see outputs/memory.txt  
+Storage: see outputs/storage.txt  
+GPU: Intel integrated graphics
+
+Detailed hardware scans are stored in:
+
+outputs/hardware/
+
+---
+
+# Core Software Environment
+
+Primary tools installed on the Toughbook:
+
 - Docker
 - Git
 - OpenSSH / SSHFS
@@ -33,16 +57,50 @@ Portable Debian workstation used for:
 - powertop
 - zram-tools
 
-## Important Outputs
-- outputs/system-info.txt
-- outputs/network.txt
-- outputs/storage.txt
-- outputs/manual-packages.txt
-- outputs/running-services.txt
-- outputs/systemd-timers.txt
-- outputs/open-ports.txt
+Full package lists are stored in:
 
-## Notes
-- Detailed machine role is documented in notes/toughbook-purpose.md
-- Package and service inventories are stored in outputs/
-- This file should only describe the Toughbook itself
+outputs/manual-packages.txt  
+outputs/all-packages.txt
+
+---
+
+# Key System Snapshots
+
+These files represent the current system state.
+
+outputs/system-info.txt  
+outputs/network.txt  
+outputs/storage.txt  
+outputs/running-services.txt  
+outputs/systemd-timers.txt  
+outputs/open-ports.txt
+
+---
+
+# Documentation
+
+Additional machine documentation:
+
+notes/toughbook-purpose.md  
+notes/hardware/toughbook.md
+
+Server documentation:
+
+notes/server-overview.md  
+notes/server-purpose.md  
+notes/server-services.md
+
+---
+
+# Repository Structure
+
+This repository separates documentation into three layers.
+
+notes/  
+Human-written architecture and purpose documentation
+
+outputs/  
+Machine-generated system snapshots
+
+scripts/  
+Automation used to generate inventory and diagnostics
