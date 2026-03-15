@@ -1,79 +1,108 @@
 # Network Topology
 
-## Main Devices
+This document describes the current network layout of the home lab.
 
-### Toughbook
-Portable Linux workstation used for:
-- server administration
-- network diagnostics
-- SSH access
-- system-map updates
-- AI command-line tools
+---
 
-### Optiplex Server
-Main home server used for:
-- media storage
-- Jellyfin streaming
-- emulator hosting
-- Docker services
-- network file sharing
+# Local Network Overview
 
-### Router
-Main gateway for the local network.
+The lab operates on a private LAN behind a consumer router.
 
-Provides:
-- internet access
-- DNS
-- local routing
+Router / Gateway:
+- IP address: 192.168.4.1
 
-## Important Addresses
+Local network range:
+- 192.168.4.0/22
 
-- Server: 192.168.4.76
-- Gateway / Router: 192.168.4.1
+All machines obtain connectivity through this gateway.
 
-## Relationship Between Systems
+---
 
-The Toughbook is the primary control machine.
+# Server
 
-The Toughbook connects to the server over SSH and is used to:
-- manage services
-- inspect hardware
-- update the system map
-- troubleshoot networking
+Hostname: tup  
+Role: primary home server
 
-The server provides services to the rest of the local network.
+Main network interface:
 
-## Server Services Exposed on LAN
+- Interface: eno1
+- Address: 192.168.4.76
+- Connected via Ethernet
 
-### Jellyfin
-- Port 8096
-- media streaming
+Default route:
 
-### Uptime Kuma
-- Port 3001
-- service monitoring
+- Gateway: 192.168.4.1
 
-### Portainer
-- Port 9000
-- Docker management
+This machine hosts most self-hosted services.
 
-### Tdarr
-- Ports 8265 and 8266
-- video processing and transcoding
+---
 
-## Shared Paths
+# Docker Networking
 
-### Server
-- /srv/media
-- /srv/appdata/jellyfin
-- /your/config/tdarr
-- /tmp/tdarr
+Docker creates internal virtual networks used by containers.
 
-## Future Direction
+These networks exist only inside the server.
 
-Planned future improvements:
-- add more drives to the server
-- expand media storage
-- improve storage layout
-- eventually run OpenClaw from the server
-- use the server as a central management point for the home network
+Current Docker bridge networks:
+
+- 172.17.0.0/16 (docker0 default network)
+- 172.18.0.0/16
+- 172.22.0.0/16
+
+Interfaces observed:
+
+- docker0
+- br-dc5ab34c9662
+- br-0a5b42541c36
+
+Additional `veth*` interfaces are temporary virtual ethernet links used by running containers.
+
+These are normal and change frequently.
+
+---
+
+# Logical Network Diagram
+
+Internet
+│
+Router / Gateway
+192.168.4.1
+│
+──────────── LAN ────────────
+│
+Server (Optiplex 7010)
+Hostname: tup
+IP: 192.168.4.76
+Interface: eno1
+│
+Docker networks
+172.17.0.0/16
+172.18.0.0/16
+172.22.0.0/16
+
+---
+
+# Purpose of This Layout
+
+The server sits on the LAN and exposes selected services to other machines in the house.
+
+Typical services may include:
+
+- Jellyfin
+- OpenClaw
+- file sharing
+- SSH administration
+
+Docker containers run inside isolated virtual networks but can expose ports to the main LAN.
+
+---
+
+# Notes
+
+The Docker bridge networks are internal and do not affect normal LAN communication.
+
+The only externally visible interface for the server is:
+
+- eno1 (192.168.4.76)
+
+All home devices access services through this LAN address.
