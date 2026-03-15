@@ -7,7 +7,7 @@ OUT="$REPO_DIR/configs/server-services.csv"
 
 TMPFILE="$(mktemp)"
 
-docker ps --format '{{.Names}},{{.Names}} {{.Ports}}' > "$TMPFILE"
+docker ps --format '{{.Names}}|{{.Names}} {{.Ports}}' > "$TMPFILE"
 
 echo "id,label" > "$OUT"
 
@@ -18,10 +18,11 @@ if [ ! -s "$TMPFILE" ]; then
     exit 1
 fi
 
-while IFS=',' read -r name ports
+while IFS='|' read -r name label
 do
     id=$(echo "$name" | tr '-' '_')
-    echo "$id,$ports" >> "$OUT"
+    clean_label=$(echo "$label" | sed 's/,/;/g')
+    echo "$id,$clean_label" >> "$OUT"
 done < "$TMPFILE"
 
 rm -f "$TMPFILE"
