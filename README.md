@@ -1,54 +1,87 @@
 # System Map
 
-This repository documents the systems in my homelab, their hardware, software, roles, configs, and generated state snapshots.
+This repository documents the hardware, software, and architecture of my personal home lab.
 
-## Main Systems
+Primary workstation:
+Panasonic Toughbook CF-31 (Mk1 rugged laptop)
 
-### Toughbook
-Portable Debian workstation used for:
-- server administration
-- network diagnostics
-- hardware testing and power tuning
-- command-line AI tools
+Primary server:
+Dell Optiplex 7010 running Docker services including Jellyfin.
 
-### Optiplex Server
-Main home server used for:
-- media storage
-- Jellyfin streaming
-- emulator hosting
-- Docker services
-- network file sharing
+The goal of this repository is to allow the system to be **understood and rebuilt** from documentation and exported configuration snapshots.
+
+---
 
 ## Repository Structure
 
-- `scripts/` -> automation and collection scripts
-- `outputs/` -> generated system snapshots
-- `outputs/server/` -> server-specific generated snapshots
-- `configs/` -> copied config files
-- `configs/server/` -> server-specific copied config files
-- `notes/` -> human-readable notes
-- `notes/hardware/` -> physical hardware documentation
+notes/
+Human-written documentation explaining system purpose and architecture.
 
-## Key Files
+outputs/
+Automatically generated system snapshots including hardware, software, and safe configuration exports.
 
-- `INVENTORY.md` -> Toughbook summary
-- `CHANGES.md` -> dated change history
-- `notes/toughbook-purpose.md` -> Toughbook role
-- `notes/server-purpose.md` -> server role
-- `notes/server-overview.md` -> server service summary
-- `notes/network-topology.md` -> network layout
-- `notes/hardware/toughbook.md` -> Toughbook hardware
-- `notes/hardware/server.md` -> server hardware
+scripts/
+Automation scripts used to generate inventories and configuration exports.
 
-## Workflow
+ai-context.md
+Condensed system snapshot intended as the primary entry point for AI tools.
 
-### Toughbook
-- run mapping script
-- review outputs
-- update notes if needed
-- commit snapshot to git
+---
 
-### Server
-- run desktop launcher or nightly script
-- update server-specific outputs and configs
-- commit snapshot to git
+## Key Hardware
+
+**Laptop**
+Panasonic Toughbook CF-31  
+Intel Core i5-520M  
+8GB DDR3  
+2.5" SATA SSD  
+WWAN module: Sierra Wireless MC8355  
+RTL-SDR USB receiver for radio experiments.
+
+**Server**
+Dell Optiplex 7010  
+Media server and home lab services.
+
+**Embedded Devices**
+Heltec WiFi LoRa 32 V3 boards (ESP32 + LoRa).
+
+---
+
+## Automation
+
+System snapshots are generated using scripts located in:
+scripts/
+
+
+Key scripts include:
+
+- export-hardware-inventory.sh
+- export-software-inventory.sh
+- export-configs.sh
+- export-ai-context.sh
+
+These scripts populate the `outputs/` directory.
+
+---
+
+## AI Usage
+
+AI tools should start by reading:
+ai-context.md
+
+Then reference:
+notes/
+outputs/hardware/
+outputs/software/
+outputs/configs/
+
+---
+
+## Purpose
+
+This repository exists to:
+
+- document my hardware lab
+- maintain reproducible system configuration
+- support troubleshooting
+- allow AI tools to understand the environment
