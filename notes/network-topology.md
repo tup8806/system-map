@@ -1,108 +1,119 @@
 # Network Topology
 
-This document describes the current network layout of the home lab.
+This document describes the current observed network layout of the home lab and nearby household devices.
 
 ---
 
-# Local Network Overview
+## Local Network Overview
 
-The lab operates on a private LAN behind a consumer router.
+The lab operates on a private LAN behind an Eero router.
 
-Router / Gateway:
-- IP address: 192.168.4.1
+- Gateway / primary router: `192.168.4.1`
+- Local network range: `192.168.4.0/22`
 
-Local network range:
-- 192.168.4.0/22
-
-All machines obtain connectivity through this gateway.
+The server is connected by Ethernet.
+The Toughbook is connected by Wi-Fi.
 
 ---
 
-# Server
+## Core Lab Devices
 
-Hostname: tup  
-Role: primary home server
+### Server
+- Hostname: `tup`
+- Hardware: Dell Optiplex 7010
+- Role: home server / media server / retro gaming system
+- IP address: `192.168.4.76`
+- Connection: Ethernet
+- Main interface: `eno1`
 
-Main network interface:
-
-- Interface: eno1
-- Address: 192.168.4.76
-- Connected via Ethernet
-
-Default route:
-
-- Gateway: 192.168.4.1
-
-This machine hosts most self-hosted services.
-
----
-
-# Docker Networking
-
-Docker creates internal virtual networks used by containers.
-
-These networks exist only inside the server.
-
-Current Docker bridge networks:
-
-- 172.17.0.0/16 (docker0 default network)
-- 172.18.0.0/16
-- 172.22.0.0/16
-
-Interfaces observed:
-
-- docker0
-- br-dc5ab34c9662
-- br-0a5b42541c36
-
-Additional `veth*` interfaces are temporary virtual ethernet links used by running containers.
-
-These are normal and change frequently.
+### Toughbook
+- Hostname: `toughbook`
+- Hardware: Panasonic Toughbook CF-31
+- Role: portable admin workstation
+- IP address: `192.168.4.82`
+- Connection: Wi-Fi
+- Main interface: `wlp10s0`
 
 ---
 
-# Logical Network Diagram
+## Infrastructure Devices
 
+### Eero Router / Gateway
+- IP address: `192.168.4.1`
+- Role: main LAN gateway and Wi-Fi infrastructure
+
+### Additional Eero Device / Mesh Node
+- IP address: `192.168.4.77`
+- Evidence:
+  - MAC vendor prefix matches the router family
+  - open TCP port `53`
+  - open TCP port `3001`
+  - responds like network infrastructure rather than a user device
+- Working identification: likely an additional Eero mesh node
+
+---
+
+## Other Observed Network Devices
+
+### AirPlay-Capable Media Device
+- IP address: `192.168.4.23`
+- Open TCP port: `7000`
+- Service detection: `AirTunes rtspd 377.40.00`
+- Working identification: likely a smart TV, speaker, or streaming device with AirPlay / AirTunes support
+
+### Google Pixel 10
+- IP address: `192.168.4.59`
+- Device: Google Pixel 10
+- Open TCP port observed: `2121`
+- Service detection: `ftp` (`oftpd`)
+- Purpose during scan: temporary Wi-Fi file transfer from phone to Toughbook
+
+This was not a permanent infrastructure service.
+It was opened intentionally to transfer media over Wi-Fi.
+
+### Previously Seen Device
+- IP address: `192.168.4.75`
+- Seen in ARP / neighbor table earlier
+- Did not respond to later `nmap` scan
+- Current status: inactive, sleeping, or disconnected
+
+---
+
+## Server Networking
+
+The server uses:
+
+- LAN IP: `192.168.4.76`
+- default gateway: `192.168.4.1`
+
+Docker also creates internal virtual networks on the server:
+
+- `172.17.0.0/16`
+- `172.18.0.0/16`
+- `172.22.0.0/16`
+
+These are internal container networks and are not separate household devices.
+
+---
+
+## Logical Diagram
+
+```text
 Internet
-│
-Router / Gateway
+   │
+Eero Router / Gateway
 192.168.4.1
-│
-──────────── LAN ────────────
-│
-Server (Optiplex 7010)
-Hostname: tup
-IP: 192.168.4.76
-Interface: eno1
-│
-Docker networks
-172.17.0.0/16
-172.18.0.0/16
-172.22.0.0/16
-
----
-
-# Purpose of This Layout
-
-The server sits on the LAN and exposes selected services to other machines in the house.
-
-Typical services may include:
-
-- Jellyfin
-- OpenClaw
-- file sharing
-- SSH administration
-
-Docker containers run inside isolated virtual networks but can expose ports to the main LAN.
-
----
-
-# Notes
-
-The Docker bridge networks are internal and do not affect normal LAN communication.
-
-The only externally visible interface for the server is:
-
-- eno1 (192.168.4.76)
-
-All home devices access services through this LAN address.
+   │
+──────────── Household LAN ────────────
+   │
+   ├── Server (tup) ................ 192.168.4.76
+   │      └── Docker internal networks
+   │          ├── 172.17.0.0/16
+   │          ├── 172.18.0.0/16
+   │          └── 172.22.0.0/16
+   │
+   ├── Toughbook ................... 192.168.4.82
+   ├── Eero mesh node? ............. 192.168.4.77
+   ├── AirPlay media device ........ 192.168.4.23
+   ├── google pixel 10 ........... 192.168.4.59
+   └── inactive/unknown device ..... 192.168.4.75
