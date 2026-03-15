@@ -1,14 +1,14 @@
 # Panasonic Toughbook CF-31
 
-Rugged field laptop used as the primary administration and experimentation machine for the home lab.
+Rugged field laptop used as the primary portable administration and experimentation machine for this home lab.
 
 ---
 
-# System Overview
+## System Overview
 
-Model: Panasonic Toughbook CF-31  
-Hostname: toughbook  
-Operating System: Debian (XFCE desktop)
+- Model: Panasonic Toughbook CF-31
+- Hostname: toughbook
+- Operating System: Debian with XFCE desktop
 
 Primary roles:
 
@@ -20,156 +20,146 @@ Primary roles:
 
 ---
 
-# CPU
+## CPU
 
-Intel Core i5 M 520  
-Architecture: x86_64  
-Cores: 2  
-Threads: 4  
-Base clock: 2.40 GHz  
-Virtualization: Intel VT-x supported
+- Model: Intel Core i5 M 520
+- Architecture: x86_64
+- Cores: 2
+- Threads: 4
+- Base clock: 2.40 GHz
+- Virtualization: Intel VT-x supported
 
-This is a 1st generation Intel Core mobile processor (Arrandale).
-
----
-
-# Memory
-
-Installed RAM: 8 GB DDR3
-
-Memory usage is typically managed with:
-
-- zram swap
-- standard disk swap partition
+This is a 1st-generation Intel Core mobile processor.
 
 ---
 
-# Storage
+## Memory
 
-Primary Drive
-
-Drive model: TEAM T253512GB  
-Capacity: 512 GB SATA SSD  
-
-Partition layout:
-
-/dev/sda1   root filesystem  
-/dev/sda5   swap partition
-
-The system also uses a zram compressed RAM swap device.
+- Installed RAM: 8 GB DDR3
+- Reported usable memory: about 7.6 GiB
+- Swap:
+  - disk swap partition
+  - zram compressed swap device
 
 ---
 
-# Graphics
+## Storage
 
-Integrated Intel graphics (Arrandale generation).
+### Primary Drive
+- Model: TEAM T253512GB
+- Type: 2.5-inch SATA SSD
+- Capacity: 512 GB
 
-Provided by the CPU's integrated GPU.
+### Partition Layout
+- `/dev/sda1` - root filesystem
+- `/dev/sda5` - swap partition
+
+### Additional Swap
+- `zram0` - compressed RAM swap device
+
+---
+
+## Graphics
+
+- Intel integrated graphics
+- Provided by the Arrandale-generation CPU platform
 
 Used for:
 
 - XFCE desktop
-- basic GPU acceleration
-- light graphical workloads
+- normal Linux graphical use
+- light accelerated workloads
 
 ---
 
-# Network Hardware
+## Network Hardware
 
-Ethernet
+### Ethernet
+- Intel 82577LM Gigabit Network Connection
 
-Intel 82577LM Gigabit Network Controller
-
-Wireless
-
-Intel Centrino Advanced-N 6200 Wi-Fi adapter
+### Wi-Fi
+- Intel Centrino Advanced-N 6200
 
 ---
 
-# Bluetooth
+## Bluetooth
 
-Internal Bluetooth adapter detected as:
+### Internal Bluetooth Adapter
+- ALPS UGTZ4 Bluetooth module
 
-ALPS UGTZ4 Bluetooth module
+### Active Controller
+- Controller name: toughbook
+- Controller address: 04:76:6E:71:24:B9
 
-Controller address:
+### rfkill Status
+- Wi-Fi soft blocked: no
+- Wi-Fi hard blocked: no
+- Bluetooth soft blocked: no
+- Bluetooth hard blocked: no
 
-04:76:6E:71:24:B9
-
-Bluetooth is used primarily for:
+Bluetooth is used for:
 
 - audio devices
 - wireless peripherals
 
 ---
 
-# Cellular Modem
+## Cellular / WWAN Hardware
 
-Internal cellular modem detected:
+Internal WWAN-related USB device detected as:
 
-Qualcomm Gobi 2000
+- Panasonic Qualcomm Gobi 2000
 
-This hardware originally supported mobile broadband connectivity in field deployments.
+This hardware appears to be the internal mobile broadband modem currently detected by the system.
 
-Current usage in the lab environment is minimal.
-
----
-
-# Other Hardware Components
-
-Touchscreen
-
-Fujitsu USB touch panel controller.
-
-Expansion / peripheral controllers
-
-Ricoh CardBus bridge  
-Ricoh SD card controller
-
-These provide legacy expansion capability.
+Current use in the lab is minimal.
 
 ---
 
-# USB Devices (Typical)
+## Touch and Expansion Hardware
 
-Logitech Nano Receiver (wireless keyboard/mouse)
+### Touchscreen
+- Fujitsu USB Touch Panel
 
-Bluetooth controller
+### Expansion / Legacy Controllers
+- Ricoh CardBus bridge
+- Ricoh SD / SDIO / MMC / Memory Stick controller
 
-Integrated USB hubs
-
----
-
-# Hardware Scans
-
-Raw hardware scans are stored in the repository.
-
-CPU information:
-
-outputs/cpu.txt
-
-Storage layout:
-
-outputs/storage.txt
-
-PCI device list:
-
-outputs/lspci.txt
-
-USB device list:
-
-outputs/lsusb.txt
+These support legacy field-laptop expansion features.
 
 ---
 
-# Notes
+## Other Detected USB Hardware
+
+- Logitech Nano Receiver
+- internal USB hubs
+- Bluetooth adapter
+- internal WWAN device
+- touchscreen controller
+
+---
+
+## Hardware Scan References
+
+Raw hardware scan outputs are stored in the repository.
+
+### Main hardware files
+- `outputs/cpu.txt`
+- `outputs/storage.txt`
+- `outputs/hardware/lspci.txt`
+- `outputs/hardware/lsusb.txt`
+
+---
+
+## Notes
 
 The Toughbook serves as the portable control machine for the lab.
 
-While older hardware, it remains extremely reliable due to:
+Important strengths of this machine:
 
 - rugged construction
-- excellent Linux compatibility
+- very good Linux compatibility
 - stable Intel networking hardware
+- built-in wireless and field-oriented expansion features
 
-The machine is intentionally kept simple and well documented so it can be repaired or rebuilt easily.
+This hardware is old but practical, repairable, and well suited to portable admin work.
