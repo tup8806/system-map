@@ -1,114 +1,143 @@
-# Server Hardware
+# Dell Optiplex 7010
 
-## Machine
+Desktop system used as the primary home server in this lab.
 
-Dell Optiplex 7010
+---
 
-Converted desktop used as the primary home server.
+## System Overview
+
+- Model: Dell Optiplex 7010
+- Hostname: server
+- Operating System: Debian
+
+Primary roles:
+
+- home server
+- media server
+- self-hosted service platform
+- storage and file-serving system
+- infrastructure node for the lab
+
+---
 
 ## CPU
 
-Intel i5 processor
+- Model: Intel Core i5-3470
+- Architecture: x86_64
+- Cores: 4
+- Threads: 4
+- Base clock: 3.20 GHz
+- Max clock: 3.60 GHz
+- Virtualization: Intel VT-x supported
 
-Exact CPU information recorded in:
+This is a 3rd-generation Intel Core desktop processor (Ivy Bridge).
 
-outputs/server/cpu.txt
+---
 
-## RAM
+## Memory
 
-Current memory configuration recorded in:
+- Installed RAM: 16 GB DDR3
+- Reported usable memory: about 15 GiB
+- Swap partition: about 1 GB
 
-outputs/server/memory.txt
+The system currently has ample RAM headroom for light server workloads.
 
-Future upgrades may include additional RAM for container workloads.
-
-## Graphics
-
-Integrated Intel graphics.
-
-Used for:
-
-- Jellyfin hardware transcoding
-- video encoding tasks
-- Tdarr processing
+---
 
 ## Storage
 
-Current layout recorded in:
+### Primary Drive
+- Model: WDC WD5000AAKX-60U6AA0
+- Type: SATA hard drive
+- Capacity: 500 GB
 
-outputs/server/storage.txt
+### Partition Layout
+- `/dev/sda1` - root filesystem
+- `/dev/sda5` - swap partition
 
-System disk:
-500GB Western Digital HDD
+### Optical Drive
+- TSSTcorp DVD-ROM SN-108DN
 
-Current usage:
+Current storage appears to be a single main hard drive with a standard Debian partition layout.
 
-- operating system
-- Docker containers
-- media storage
-- application data
+---
 
-Future plan:
+## Graphics
 
-- add additional drives
-- separate media storage from system disk
-- increase long-term storage capacity
+- Intel integrated graphics
+- Provided by the Ivy Bridge CPU platform
 
-## Network
+This is sufficient for:
 
-Ethernet connection to home network.
+- local console use
+- light desktop tasks
+- basic video output
+- some hardware-accelerated media tasks depending on software configuration
 
-Server IP:
+---
 
-192.168.4.76
+## Network Hardware
 
-Used by:
+### Ethernet
+- Intel 82579LM Gigabit Network Connection
 
-- Jellyfin clients
-- administration SSH
-- container services
+This is the server's primary network interface.
 
-## Current Services
+No dedicated Wi-Fi hardware is currently shown in the provided hardware scan.
 
-Running through Docker or system services:
+---
 
-- Jellyfin
-- Tdarr
-- Portainer
-- Uptime Kuma
-- Samba
-- SSH
+## Chipset and Platform
 
-## Media Storage
+- Intel Q77 Express chipset
+- Intel 7 Series / C216 family SATA controller
+- Intel Management Engine Interface present
 
-Primary media directory:
+This is a stable business-desktop platform well suited to home server use.
 
-/srv/media
+---
 
-Used by:
+## USB Devices Currently Detected
 
-- Jellyfin
-- Tdarr
-- local emulator systems
+- Microsoft Xbox 360 Controller
+- MosArt 2.4G wireless mouse
+- Intel integrated USB hubs
 
-## Role in Lab
+These devices may change depending on what is plugged into the system.
 
-The server acts as the **central service host** for the home network.
+---
 
-Responsibilities:
+## Hardware Scan References
 
-- media storage
-- media streaming
-- container services
-- emulator hosting
-- network file sharing
+Raw hardware scan outputs are stored in the repository.
 
-## Future Direction
+### Main hardware files
+- `outputs/server/cpu.txt`
+- `outputs/server/storage.txt`
+- `outputs/server/lspci.txt`
+- `outputs/server/lsusb.txt`
 
-Planned improvements:
+If the current file paths differ, update this section to match the actual export locations used by the repo.
 
-- add additional storage drives
-- expand media capacity
-- reorganize container appdata
-- eventually run OpenClaw from the server
-- act as the central management point for the network
+---
+
+## Notes
+
+The Optiplex 7010 is the main always-on infrastructure machine in the lab.
+
+Important strengths of this system:
+
+- reliable Intel desktop platform
+- gigabit Ethernet
+- standard SATA storage
+- simple Linux compatibility
+- easy maintenance and parts availability
+
+Limitations of the current configuration:
+
+- only one main storage drive is shown
+- limited swap space
+- no dedicated GPU
+- storage expansion may be needed for long-term media growth
+
+This machine is practical, repairable, and well suited to incremental home server upgrades.
