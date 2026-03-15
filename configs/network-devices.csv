@@ -14,3 +14,4 @@ svc-004,service,Portainer,,9000
 svc-005,service,Samba,,139/445
 svc-006,service,SSH,,22
 svc-007,service,Docker Networks,,
+asset-unk-002,unknown,Unknown Device 25,192.168.4.25,Needs identification
