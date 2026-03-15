@@ -59,3 +59,6 @@ test of desktop icon
 added
 one script for self-state
 one script for network discovery
+
+## 2026-3-15 d
+Improve network discovery with arp-scan and vendor detection

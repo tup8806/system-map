@@ -1,9 +1,9 @@
 # System Map Context
 
-Updated: Sun Mar 15 01:02:22 PM CDT 2026
+Updated: Sun Mar 15 01:14:20 PM CDT 2026
 
 ## Latest Commit
-caa5e3c Toughbook lab snapshot 2026-03-15 13:00
+92d0a0b Improve network discovery with arp-scan and vendor detection
 
 ## Network
 ### Network
