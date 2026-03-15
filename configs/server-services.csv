@@ -1,5 +1,5 @@
 id,label
-tdarr,tdarr 0.0.0.0:8265-8266->8265-8266/tcp, 8267/tcp
+tdarr,tdarr 0.0.0.0:8265-8266->8265-8266/tcp; 8267/tcp
 jellyfin,jellyfin 0.0.0.0:8096->8096/tcp
 uptime_kuma,uptime-kuma 0.0.0.0:3001->3001/tcp
-portainer,portainer 8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp
+portainer,portainer 8000/tcp; 9443/tcp; 0.0.0.0:9000->9000/tcp
