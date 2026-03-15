@@ -1,107 +1,76 @@
-# Toughbook Hardware
+# Panasonic Toughbook CF-31
 
-## Machine
-Panasonic Toughbook CF-31
+## Role
+Primary rugged portable computer and possible host platform for future dual-computer integration.
 
-Rugged laptop used as the primary portable workstation and server administration terminal.
+## Model
+- Panasonic Toughbook CF-31
+- Mk1 generation
 
 ## CPU
-Intel processor  
-Exact model recorded in:
+- Intel Core i5-520M
+- 2 cores / 4 threads
+- Base clock: 2.40 GHz
+- Socket: rPGA988A
+- Removable CPU
 
-outputs/cpu.txt
-
-## RAM
-Installed RAM recorded in:
-
-outputs/memory.txt
-
-## Graphics
-Integrated Intel graphics.
-
-Used for:
-- desktop environment
-- lightweight graphics tasks
-- terminal and monitoring work
+## Memory
+- 8 GB DDR3 installed
+- 2 × 4 GB DDR3 SO-DIMM
+- 1067 MT/s (DDR3-1066)
+- Platform maximum: 8 GB
 
 ## Storage
+- 2.5-inch SATA SSD installed
+- Original HDD replaced
 
-Primary drive recorded in:
+## Ports and I/O
+- HDMI output
+- Gigabit Ethernet (RJ-45)
+- 2 × USB 2.0
+- RS-232 serial port (DB-9)
+- DC barrel power connector
 
-outputs/storage.txt
+## Expansion
+- ExpressCard slot
+- PCMCIA slot
+- SD card reader
 
-Current role:
-- operating system
-- local scripts
-- system-map repository
-- portable administration environment
+## Wireless / Radio Hardware
 
-## Network Interfaces
+### WWAN Module
+- Sierra Wireless MC8355
 
-Ethernet  
-Wi-Fi  
-LTE modem (installed from prior law-enforcement configuration)
+### Capabilities
+- Cellular modem
+- Integrated GPS receiver
+- SIM card slot
+- Dual antenna connectors
 
-Used for:
-- home network administration
-- portable diagnostics
-- remote access
-------------------------------------------------------------
-Internal Hardware
-------------------------------------------------------------
-Graphics
-Intel Core Processor Integrated Graphics Controller
+### External Antenna Ports
+External ports labeled:
+- EXT ANT
+- GPS
 
-Ethernet
-Intel 82577LM Gigabit Network Connection
+These feed internal coax lines to the WWAN / GPS module.
 
-Wi-Fi
-Intel Centrino Advanced-N 6200
+## Physical Features
+- Bottom docking connector for vehicle dock systems
+- Removable rugged drive bay
+- Modular internal access panels
+- Removable battery (~15–16 V output)
+- Magnesium alloy rugged chassis
+- Multiple sealed port covers
+- Field / police / vehicle-oriented design
 
-Audio
-Intel High Definition Audio Controller
+## Project Relevance
+This machine is being used both as:
+1. a rugged standalone field computer, and
+2. a possible host shell for a second modern x86 system while preserving original Toughbook functionality.
 
-Storage Controller
-Intel 5 Series / 3400 Series SATA Controller
-
-SD Card Reader
-Ricoh R5C822 SD/SDIO/MMC/MS/MSPro Host Adapter
-------------------------------------------------------------
-Bluetooth
-------------------------------------------------------------
-
-Adapter
-Alps Electric Co., Ltd UGTZ4 Bluetooth
-
-USB ID
-044e:3001
-
-Controller Name
-toughbook
-
-Controller MAC
-04:76:6E:71:24:B9
-
-Service
-bluetooth.service (active)
-
-## External Hardware
-
-Often connected to:
-
-- external monitors
-- USB storage
-- SDR receiver
-- network cables for diagnostics
-
-## Role in Lab
-
-The Toughbook is the **control console** for the homelab.
-
-Responsibilities:
-
-- server administration
-- network diagnostics
-- hardware inspection
-- AI tooling via CLI
-- running system-map updates
+## Integration Interest
+Long-term interest is in adding or attaching a modern compute platform while preserving:
+- original Toughbook motherboard and boot capability
+- rugged portability
+- dual-computer operation
+- full PC software compatibility

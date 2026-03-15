@@ -78,3 +78,9 @@ sda    476.9G                                  TEAM T253512GB
 └─sda5   975M swap                  [SWAP]     
 zram0    3.8G                       [SWAP]     
 
+## Hardware Documentation
+See detailed hardware notes in:
+- notes/hardware/toughbook.md
+- notes/hardware/secondary-compute.md
+- notes/hardware/embedded-radio.md
+- notes/hardware/overview.md
