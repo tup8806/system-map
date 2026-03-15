@@ -1,5 +1,5 @@
 id,container_name,image,status,ports,restart_policy
-tdarr,tdarr,ghcr.io/haveagitgat/tdarr:latest,running,8265/tcp -> 0.0.0.0:8265;8266/tcp -> 0.0.0.0:8266,unless-stopped
-jellyfin,jellyfin,jellyfin/jellyfin:latest,running,8096/tcp -> 0.0.0.0:8096,unless-stopped
-uptime_kuma,uptime-kuma,louislam/uptime-kuma:1,running,3001/tcp -> 0.0.0.0:3001,unless-stopped
-portainer,portainer,portainer/portainer-ce:latest,running,9000/tcp -> 0.0.0.0:9000,always
+svc-002,tdarr,ghcr.io/haveagitgat/tdarr:latest,running,"8265/tcp -> 0.0.0.0:8265; 8266/tcp -> 0.0.0.0:8266",unless-stopped
+svc-001,jellyfin,jellyfin/jellyfin:latest,running,"8096/tcp -> 0.0.0.0:8096",unless-stopped
+svc-003,uptime-kuma,louislam/uptime-kuma:1,running,"3001/tcp -> 0.0.0.0:3001",unless-stopped
+svc-004,portainer,portainer/portainer-ce:latest,running,"9000/tcp -> 0.0.0.0:9000",always

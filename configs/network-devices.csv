@@ -1,16 +1,16 @@
-id,label
-internet,Internet
-router,Eero Router 192.168.4.1
-server,Optiplex Server (tup) 192.168.4.76
-toughbook,Toughbook 192.168.4.82
-mesh,Eero Mesh Node 192.168.4.77
-roku,Roku TV 192.168.4.23
-pixel,Pixel 10 192.168.4.59
-unknown,Unknown Device 192.168.4.75
-jellyfin,Jellyfin :8096
-tdarr,Tdarr :8265-8266
-uptime,Uptime Kuma :3001
-portainer,Portainer :9000
-samba,Samba :139/445
-ssh,SSH :22
-docker,Docker Networks
+id,type,label,ip,notes
+net-ext-001,external,Internet,,
+asset-net-001,network,Eero Router,192.168.4.1,Gateway
+asset-002,asset,Optiplex Server,192.168.4.76,Home server
+asset-001,asset,Toughbook,192.168.4.82,Admin workstation
+asset-net-002,network,Eero Mesh Node,192.168.4.77,Secondary Wi-Fi node
+asset-net-003,client,Roku TV,192.168.4.23,Streaming endpoint
+asset-net-004,client,Pixel 10,192.168.4.59,Temporary transfer device
+asset-unk-001,unknown,Unknown Device,192.168.4.75,Needs identification
+svc-001,service,Jellyfin,,8096
+svc-002,service,Tdarr,,8265-8266
+svc-003,service,Uptime Kuma,,3001
+svc-004,service,Portainer,,9000
+svc-005,service,Samba,,139/445
+svc-006,service,SSH,,22
+svc-007,service,Docker Networks,,

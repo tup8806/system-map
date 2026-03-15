@@ -1,0 +1,11 @@
+kind,id,name,path
+asset,asset-001,toughbook,notes/hardware/toughbook.md
+asset,asset-002,server,notes/hardware/server.md
+network,net-001,home-lan,notes/network-topology.md
+service,svc-001,jellyfin,notes/server-services.md
+service,svc-002,tdarr,notes/server-services.md
+service,svc-003,uptime-kuma,notes/server-services.md
+service,svc-004,portainer,notes/server-services.md
+service,svc-005,samba,notes/server-services.md
+service,svc-006,ssh,notes/server-services.md
+service,svc-007,docker-networks,notes/server-services.md

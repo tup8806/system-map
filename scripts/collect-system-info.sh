@@ -1,23 +1,31 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-BASE="$HOME/system-map"
-OUT="$BASE/outputs"
+BASE="${HOME}/system-map"
+OUT="${BASE}/outputs"
 
-mkdir -p "$OUT"
+mkdir -p "${OUT}"
 
-echo "### Hardware" > "$OUT/hardware.txt"
-lscpu >> "$OUT/hardware.txt" 2>/dev/null || true
-echo >> "$OUT/hardware.txt"
-lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINT,MODEL >> "$OUT/hardware.txt" 2>/dev/null || true
+{
+  echo "### Hardware"
+  lscpu 2>/dev/null || true
+  echo
+  lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINT,MODEL 2>/dev/null || true
+} > "${OUT}/hardware.txt"
 
-echo "### Network" > "$OUT/network.txt"
-ip -brief address >> "$OUT/network.txt" 2>/dev/null || true
-echo >> "$OUT/network.txt"
-ip route >> "$OUT/network.txt" 2>/dev/null || true
+{
+  echo "### Network"
+  ip -brief address 2>/dev/null || true
+  echo
+  ip route 2>/dev/null || true
+} > "${OUT}/network.txt"
 
-echo "### Running services" > "$OUT/services.txt"
-docker ps >> "$OUT/services.txt" 2>/dev/null || echo "Docker not available"
+{
+  echo "### Running services"
+  docker ps 2>/dev/null || echo "Docker not available"
+} > "${OUT}/services.txt"
 
-echo "### Storage" > "$OUT/storage.txt"
-df -h >> "$OUT/storage.txt" 2>/dev/null || true
+{
+  echo "### Storage"
+  df -h 2>/dev/null || true
+} > "${OUT}/storage.txt"
