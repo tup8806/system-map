@@ -47,3 +47,7 @@ added PipeWire audio stack
 added bluetooth
 added GQRX for srd radio
 added sdr_433 to decode sensors
+
+## 2026-3-14
+ai impovement of the repo over the last 24 hr
+test of launcher
