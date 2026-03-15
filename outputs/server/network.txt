@@ -1,15 +1,15 @@
 # Network Identity Snapshot
 
-Captured: Thu Mar 12 12:16:45 AM CDT 2026
+Captured: Sat Mar 14 11:43:49 PM CDT 2026
 
 ## Hostname
 toughbook
-192.168.4.82 172.17.0.1 fde2:5368:55a8:1:8758:b324:15cb:636d fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8 fde2:5368:55a8:1:227:10ff:fe37:78e8 
+192.168.4.82 172.17.0.1 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76 fde2:5368:55a8:1:227:10ff:fe37:78e8 
 
 ## Interfaces and Addresses
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s25          DOWN           
-wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:8758:b324:15cb:636d/64 fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
+wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
 docker0          DOWN           172.17.0.1/16 
 
 ## Default Route

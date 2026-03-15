@@ -11,20 +11,20 @@ TARGET                                                  SOURCE             FSTYP
 │ ├─/sys/kernel/config                                  configfs           configfs        rw,nosuid,nodev,noexec,relatime
 │ └─/sys/fs/fuse/connections                            fusectl            fusectl         rw,nosuid,nodev,noexec,relatime
 ├─/proc                                                 proc               proc            rw,nosuid,nodev,noexec,relatime
-│ └─/proc/sys/fs/binfmt_misc                            systemd-1          autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=15524
+│ └─/proc/sys/fs/binfmt_misc                            systemd-1          autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=16260
 │   └─/proc/sys/fs/binfmt_misc                          binfmt_misc        binfmt_misc     rw,nosuid,nodev,noexec,relatime
 ├─/dev                                                  udev               devtmpfs        rw,nosuid,relatime,size=3925080k,nr_inodes=981270,mode=755,inode64
 │ ├─/dev/pts                                            devpts             devpts          rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000
 │ ├─/dev/shm                                            tmpfs              tmpfs           rw,nosuid,nodev,inode64
-│ ├─/dev/hugepages                                      hugetlbfs          hugetlbfs       rw,relatime,pagesize=2M
-│ └─/dev/mqueue                                         mqueue             mqueue          rw,nosuid,nodev,noexec,relatime
+│ ├─/dev/mqueue                                         mqueue             mqueue          rw,nosuid,nodev,noexec,relatime
+│ └─/dev/hugepages                                      hugetlbfs          hugetlbfs       rw,relatime,pagesize=2M
 ├─/run                                                  tmpfs              tmpfs           rw,nosuid,nodev,noexec,relatime,size=792456k,mode=755,inode64
 │ ├─/run/lock                                           tmpfs              tmpfs           rw,nosuid,nodev,noexec,relatime,size=5120k,inode64
 │ ├─/run/credentials/systemd-sysusers.service           ramfs              ramfs           ro,nosuid,nodev,noexec,relatime,mode=700
-│ ├─/run/credentials/systemd-tmpfiles-setup-dev.service ramfs              ramfs           ro,nosuid,nodev,noexec,relatime,mode=700
 │ ├─/run/credentials/systemd-sysctl.service             ramfs              ramfs           ro,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/run/credentials/systemd-tmpfiles-setup-dev.service ramfs              ramfs           ro,nosuid,nodev,noexec,relatime,mode=700
 │ ├─/run/credentials/systemd-tmpfiles-setup.service     ramfs              ramfs           ro,nosuid,nodev,noexec,relatime,mode=700
 │ └─/run/user/1000                                      tmpfs              tmpfs           rw,nosuid,nodev,relatime,size=792452k,nr_inodes=198113,mode=700,uid=1000,gid=1000,inode64
-│   ├─/run/user/1000/gvfs                               gvfsd-fuse         fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
-│   └─/run/user/1000/doc                                portal             fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│   ├─/run/user/1000/doc                                portal             fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│   └─/run/user/1000/gvfs                               gvfsd-fuse         fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
 └─/mnt/myserver                                         tup@192.168.4.76:/ fuse.sshfs      rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other

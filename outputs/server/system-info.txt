@@ -4,7 +4,7 @@
        Icon name: computer-laptop
          Chassis: laptop 💻
       Machine ID: a68abc30599e411e87b6a6b7b65c97ad
-         Boot ID: 73880606ed794cb986d2034285fb2b6e
+         Boot ID: ca3286339e934fafbb5fe4f5908649e3
 Operating System: Debian GNU/Linux 12 (bookworm)
           Kernel: Linux 6.1.0-43-amd64
     Architecture: x86-64

@@ -1,15 +1,15 @@
 # System Map Context
 
-Updated: Sat Mar 14 11:08:55 PM CDT 2026
+Updated: Sat Mar 14 11:43:51 PM CDT 2026
 
 ## Latest Commit
-a7054d6 Add repository overview for humans and AI
+943a877 Add AI navigation guide
 
 ## Network
 ### Network
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s25          DOWN           
-wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:8758:b324:15cb:636d/64 fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
+wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
 docker0          DOWN           172.17.0.1/16 
 
 default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600 
@@ -19,24 +19,23 @@ default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600
 
 ## Storage
 ### Storage
-Filesystem                         Size  Used Avail Use% Mounted on
-udev                               3.8G     0  3.8G   0% /dev
-tmpfs                              774M  1.6M  773M   1% /run
-/dev/sda1                          468G   24G  420G   6% /
-tmpfs                              3.8G  216K  3.8G   1% /dev/shm
-tmpfs                              5.0M  8.0K  5.0M   1% /run/lock
-tmpfs                              774M  2.5M  772M   1% /run/user/1000
-tup@192.168.4.76:/                 457G  215G  219G  50% /mnt/myserver
-qbittorrent-5.1.4_x86_64.AppImage   93M   93M     0 100% /tmp/.mount_qbittoEPlkAA
+Filesystem          Size  Used Avail Use% Mounted on
+udev                3.8G     0  3.8G   0% /dev
+tmpfs               774M  1.5M  773M   1% /run
+/dev/sda1           468G   65G  380G  15% /
+tmpfs               3.8G     0  3.8G   0% /dev/shm
+tmpfs               5.0M  8.0K  5.0M   1% /run/lock
+tmpfs               774M  2.5M  772M   1% /run/user/1000
+tup@192.168.4.76:/  457G  244G  190G  57% /mnt/myserver
 
 ## Local Services
 ### Running services
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 ## Server Docker Containers
-CONTAINER ID   IMAGE         COMMAND          CREATED      STATUS                    PORTS     NAMES
-980722499c61   geti2p/i2p    "/startapp.sh"   8 days ago   Exited (137) 8 days ago             i2p
-8cbc02dde049   hello-world   "/hello"         8 days ago   Exited (0) 8 days ago               sharp_wilson
+CONTAINER ID   IMAGE         COMMAND          CREATED       STATUS                     PORTS     NAMES
+980722499c61   geti2p/i2p    "/startapp.sh"   11 days ago   Exited (137) 11 days ago             i2p
+8cbc02dde049   hello-world   "/hello"         11 days ago   Exited (0) 11 days ago               sharp_wilson
 
 ## Server Running Services
   UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
@@ -73,7 +72,7 @@ SUB    = The low-level unit activation state, values depend on unit type.
 ## Server Storage
 NAME     SIZE FSTYPE FSAVAIL FSUSE% MOUNTPOINT MODEL
 sda    476.9G                                  TEAM T253512GB
-├─sda1   476G ext4    419.7G     5% /          
+├─sda1   476G ext4    379.1G    14% /          
 ├─sda2     1K                                  
 └─sda5   975M swap                  [SWAP]     
 zram0    3.8G                       [SWAP]     

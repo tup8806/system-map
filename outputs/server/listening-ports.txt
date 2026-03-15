@@ -1,11 +1,10 @@
 Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                   
-udp   UNCONN 0      0            0.0.0.0:52355      0.0.0.0:*    users:(("firefox-esr",pid=1419,fd=82))   
-udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=26))
-udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=24))
-tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*                                             
-tcp   LISTEN 0      511        127.0.0.1:18791      0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=28))
-tcp   LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=22))
-tcp   LISTEN 0      511        127.0.0.1:18792      0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=29))
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=857,fd=26))
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=857,fd=24))
+tcp   LISTEN 0      511        127.0.0.1:18792      0.0.0.0:*    users:(("openclaw-gatewa",pid=857,fd=29))
+tcp   LISTEN 0      511        127.0.0.1:18791      0.0.0.0:*    users:(("openclaw-gatewa",pid=857,fd=28))
+tcp   LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*    users:(("openclaw-gatewa",pid=857,fd=22))
 tcp   LISTEN 0      4096       127.0.0.1:9050       0.0.0.0:*                                             
+tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*                                             
+tcp   LISTEN 0      511            [::1]:18789         [::]:*    users:(("openclaw-gatewa",pid=857,fd=23))
 tcp   LISTEN 0      128             [::]:22            [::]:*                                             
-tcp   LISTEN 0      511            [::1]:18789         [::]:*    users:(("openclaw-gatewa",pid=786,fd=23))

@@ -21,8 +21,8 @@ git --no-pager diff --stat
 echo
 echo "Updating git repository..."
 
-git add CHANGES.md ai-context.md outputs configs
-git add notes/server-purpose.md scripts/update-system-map.sh scripts/nightly-oneclick.sh 2>/dev/null || true
+git add CHANGES.md ai-context.md outputs scripts notes README.md AI_README.md .gitignore
+git add scripts/update-system-map.sh scripts/nightly-oneclick.sh 2>/dev/null || true
 
 git commit -m "Server snapshot $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || echo "No changes to commit"
 
