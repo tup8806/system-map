@@ -7,7 +7,7 @@ cd "$HOME/system-map" || exit 1
 if ! git diff --quiet || ! git diff --cached --quiet; then
     echo "Repository has uncommitted changes. Skipping auto snapshot."
     git status
-    exit 1
+    exit 0
 fi
 
 echo "Updating repository..."
