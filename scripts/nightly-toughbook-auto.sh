@@ -25,6 +25,9 @@ echo "Generating device inventory..."
 echo "Generating network graph..."
 ./scripts/generate-network-graph.sh 2>/dev/null || true
 
+echo "Generating lab dashboard..."
+./scripts/generate-lab-dashboard.sh 2>/dev/null || true
+
 echo "Exporting AI context..."
 ./scripts/export-ai-context.sh > ai-context.md
 
