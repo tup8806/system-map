@@ -3,12 +3,9 @@ set -e
 
 cd "$HOME/system-map" || exit 1
 
-# Ensure repo is clean before pulling
+# Stop if there are manual edits waiting.
 if ! git diff --quiet || ! git diff --cached --quiet; then
-    echo
-    echo "Repository has uncommitted changes."
-    echo "Commit or stash them before running the nightly script."
-    echo
+    echo "Repository has uncommitted changes. Skipping auto snapshot."
     git status
     exit 1
 fi
@@ -32,23 +29,18 @@ echo "Exporting AI context..."
 ./scripts/export-ai-context.sh > ai-context.md
 
 echo
-echo "Opening CHANGES.md for tonight's notes..."
-sleep 1
-nano CHANGES.md
-
-echo
 echo "Reviewing changes..."
 git status
-git --no-pager diff --stat
+git --no-pager diff --stat || true
 
 echo
 echo "Committing updates..."
 
-git add outputs ai-context.md CHANGES.md
+git add outputs ai-context.md
 git add configs/network-devices.csv configs/network-links.csv 2>/dev/null || true
-git commit -m "Toughbook lab snapshot $(date '+%Y-%m-%d %H:%M')" || echo "No changes to commit"
+git commit -m "Toughbook auto snapshot $(date '+%Y-%m-%d %H:%M')" || echo "No changes to commit"
 
 git push
 
 echo
-echo "Toughbook nightly run complete."
+echo "Toughbook auto nightly run complete."

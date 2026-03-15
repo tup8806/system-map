@@ -1,6 +1,6 @@
 # Network Identity Snapshot
 
-Captured: Wed Mar 11 11:36:16 AM CDT 2026
+Captured: Sun Mar 15 12:50:19 PM CDT 2026
 
 ## Hostname
 toughbook
@@ -10,7 +10,7 @@ toughbook
        Icon name: computer-laptop
          Chassis: laptop 💻
       Machine ID: a68abc30599e411e87b6a6b7b65c97ad
-         Boot ID: 73880606ed794cb986d2034285fb2b6e
+         Boot ID: ca3286339e934fafbb5fe4f5908649e3
 Operating System: Debian GNU/Linux 12 (bookworm)
           Kernel: Linux 6.1.0-43-amd64
     Architecture: x86-64
@@ -21,7 +21,7 @@ Firmware Version: V1.00L16
 ## Interfaces and IP Addresses
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s25          DOWN           
-wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:b2c2:8a8a:78a3:9db8/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
+wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
 docker0          DOWN           172.17.0.1/16 
 
 ## Default Route
