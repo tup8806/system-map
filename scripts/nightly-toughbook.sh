@@ -3,6 +3,16 @@ set -e
 
 cd "$HOME/system-map" || exit 1
 
+# Ensure repo is clean before pulling
+if ! git diff --quiet || ! git diff --cached --quiet; then
+    echo
+    echo "Repository has uncommitted changes."
+    echo "Commit or stash them before running the nightly script."
+    echo
+    git status
+    exit 1
+fi
+
 echo "Updating repository..."
 git pull --rebase origin main
 
