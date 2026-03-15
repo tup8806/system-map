@@ -1,6 +1,6 @@
 # Storage Layout
 
-This document describes the current storage layout of the home server and how media is organized for services such as Jellyfin.
+This document describes the current storage layout of the home server and how media and game content are organized.
 
 ---
 
@@ -17,7 +17,9 @@ The server currently shows one main internal storage drive.
 This drive currently holds both:
 
 - the Debian operating system
-- server data and media storage
+- server data
+- media storage
+- RetroPie game storage
 
 ---
 
@@ -46,7 +48,7 @@ Current filesystem usage from `df -h`:
 - Available: 190 GB
 - Usage: 57%
 
-This means the server still has usable free space, but media growth will eventually require more storage.
+This means the server still has usable free space, but media and game growth will eventually require more storage.
 
 ---
 
@@ -64,7 +66,7 @@ Current top-level directories under `/srv`:
 - `/srv/media`
 - `/srv/stacks`
 
-This suggests `/srv` is being used as the primary area for self-hosted service data.
+This suggests `/srv` is being used as the main area for self-hosted service data.
 
 ---
 
@@ -80,7 +82,7 @@ Current media categories:
 - `/srv/media/tv`
 - `/srv/media/music`
 
-This is a clean and sensible layout for media server use.
+This is the main content library used by Jellyfin.
 
 ---
 
@@ -103,17 +105,56 @@ This means Jellyfin sees the media library inside the container at:
 
 ---
 
+## RetroPie and EmulationStation Storage
+
+The retro gaming library is stored separately from the media library.
+
+RetroPie root directory:
+
+- `/home/tup/RetroPie`
+
+Important RetroPie paths:
+
+- BIOS files: `/home/tup/RetroPie/BIOS`
+- menu files: `/home/tup/RetroPie/retropiemenu`
+- ROM library: `/home/tup/RetroPie/roms`
+
+Current ROM library includes many system folders such as:
+
+- `nes`
+- `snes`
+- `n64`
+- `nds`
+- `psx`
+- `mame`
+- `mame-libretro`
+- `genesis`
+- `megadrive`
+- `mastersystem`
+- `gamegear`
+- `gba`
+- `gb`
+- `gbc`
+
+This means the server currently stores two different kinds of entertainment content:
+
+- streaming media under `/srv/media`
+- retro game content under `/home/tup/RetroPie`
+
+---
+
 ## Current Design Summary
 
 The current storage design is:
 
 - one internal hard drive
 - one root filesystem
-- OS and media stored on the same disk
-- service data organized under `/srv`
+- OS, media, service data, and RetroPie content stored on the same disk
+- service data organized mostly under `/srv`
+- RetroPie stored under `/home/tup/RetroPie`
 - Jellyfin reading media from `/srv/media`
 
-This is easy to understand and simple to manage, which is good for a starter server.
+This is simple and understandable, but all major content currently depends on a single disk.
 
 ---
 
@@ -123,19 +164,21 @@ This is easy to understand and simple to manage, which is good for a starter ser
 - no separate mount complexity
 - Jellyfin path mapping is straightforward
 - service data is grouped under `/srv`
-- media categories are clearly separated
+- RetroPie uses standard home-directory paths
+- media and game libraries are clearly separated logically
 
 ---
 
 ## Current Limitations
 
 - only one main storage drive is present
-- operating system and media share the same disk
+- operating system, media, and game content share the same disk
 - no dedicated backup drive is shown
 - no separate media filesystem is shown
-- future storage expansion will be needed as the library grows
+- RetroPie content is stored under the user home directory instead of a central shared content path
+- future storage expansion will be needed as the media and ROM libraries grow
 
-This layout is practical for now, but it is not ideal for long-term media growth or fault tolerance.
+This layout is practical for now, but it is not ideal for long-term storage growth or fault tolerance.
 
 ---
 
@@ -143,29 +186,25 @@ This layout is practical for now, but it is not ideal for long-term media growth
 
 Likely future improvements:
 
-1. add one or more larger drives for media storage
-2. separate OS storage from bulk media storage
+1. add one or more larger drives for media and game storage
+2. separate OS storage from bulk content storage
 3. add a backup strategy for important data
-4. document exact mount points for future expansion
+4. decide whether RetroPie content should remain under `/home/tup/RetroPie` or move to a shared storage path
 5. keep Jellyfin media paths stable even if disks change underneath
+6. document future mount points clearly
 
-A good long-term goal is to preserve `/srv/media` as the main logical media path, even if it later becomes a mounted drive or pooled storage location.
+A good long-term goal is to preserve stable logical paths even if the underlying storage changes.
 
 ---
 
 ## Notes
 
-Current media examples show that the library already contains:
+The current server acts both as:
 
-- movies
-- TV series
-- music collections
+- a home media server
+- a retro gaming and entertainment machine
 
-This confirms that `/srv/media` is actively in use as the main library root.
+That means storage planning needs to account for both:
 
-As the server grows, this file should be updated whenever:
-
-- new drives are added
-- mount points change
-- backup storage is added
-- media storage is moved off the root disk
+- video and music library growth
+- ROM, BIOS, and emulator-related content
