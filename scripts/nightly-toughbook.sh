@@ -31,7 +31,8 @@ git --no-pager diff --stat
 echo
 echo "Committing updates..."
 
-git add outputs configs ai-context.md CHANGES.md
+git add outputs ai-context.md CHANGES.md
+git add configs/network-devices.csv configs/network-links.csv 2>/dev/null || true
 git commit -m "Toughbook lab snapshot $(date '+%Y-%m-%d %H:%M')" || echo "No changes to commit"
 
 git push
