@@ -1,0 +1,39 @@
+System Drift Report
+Generated: Sun Mar 15 08:37:30 PM CDT 2026
+
+Checking for unknown devices...
+Unknown device check
+Generated: Sun Mar 15 08:37:30 PM CDT 2026
+
+No unknown devices detected.
+
+Checking open ports...
+1,5c1,11
+< id,container_name,image,status,ports,restart_policy
+< svc-002,tdarr,ghcr.io/haveagitgat/tdarr:latest,running,"8265/tcp -> 0.0.0.0:8265; 8266/tcp -> 0.0.0.0:8266",unless-stopped
+< svc-001,jellyfin,jellyfin/jellyfin:latest,running,"8096/tcp -> 0.0.0.0:8096",unless-stopped
+< svc-003,uptime-kuma,louislam/uptime-kuma:1,running,"3001/tcp -> 0.0.0.0:3001",unless-stopped
+< svc-004,portainer,portainer/portainer-ce:latest,running,"9000/tcp -> 0.0.0.0:9000",always
+---
+> Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                   
+> udp   UNCONN 0      0            0.0.0.0:46311      0.0.0.0:*    users:(("firefox-esr",pid=1419,fd=60))   
+> udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=26))
+> udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=24))
+> tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*                                             
+> tcp   LISTEN 0      511        127.0.0.1:18791      0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=28))
+> tcp   LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=22))
+> tcp   LISTEN 0      511        127.0.0.1:18792      0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=29))
+> tcp   LISTEN 0      4096       127.0.0.1:9050       0.0.0.0:*                                             
+> tcp   LISTEN 0      128             [::]:22            [::]:*                                             
+> tcp   LISTEN 0      511            [::1]:18789         [::]:*    users:(("openclaw-gatewa",pid=786,fd=23))
+
+Checking docker containers...
+1,3c1,3
+< CONTAINER ID   IMAGE         COMMAND          CREATED      STATUS                    PORTS     NAMES
+< 980722499c61   geti2p/i2p    "/startapp.sh"   7 days ago   Exited (137) 7 days ago             i2p
+< 8cbc02dde049   hello-world   "/hello"         7 days ago   Exited (0) 7 days ago               sharp_wilson
+---
+> IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+> geti2p/i2p:latest    254256ca8162        560MB          198MB   U    
+> hello-world:latest   ef54e839ef54       25.9kB         9.52kB   U    
+

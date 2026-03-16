@@ -1,0 +1,53 @@
+{
+  "generated": "Sun Mar 15 08:37:30 PM CDT 2026",
+  "devices": [
+    {
+      "id": "asset-net-001",
+      "ip": "192.168.4.1",
+      "name": "eero-router",
+      "notes": "Primary gateway"
+    },
+    {
+      "id": "asset-net-002",
+      "ip": "192.168.4.77",
+      "name": "eero-mesh-node",
+      "notes": "Secondary Wi-Fi node"
+    },
+    {
+      "id": "asset-002",
+      "ip": "192.168.4.76",
+      "name": "server",
+      "notes": "Home server"
+    },
+    {
+      "id": "asset-001",
+      "ip": "192.168.4.82",
+      "name": "toughbook",
+      "notes": "Admin workstation"
+    },
+    {
+      "id": "asset-net-003",
+      "ip": "192.168.4.23",
+      "name": "roku-tv",
+      "notes": "AirPlay enabled"
+    },
+    {
+      "id": "asset-net-004",
+      "ip": "192.168.4.59",
+      "name": "pixel-10",
+      "notes": "Temporary FTP sharing when transferring media"
+    },
+    {
+      "id": "asset-unk-002",
+      "ip": "192.168.4.25",
+      "name": "unknown-device-25",
+      "notes": "Needs identification"
+    },
+    {
+      "id": "asset-unk-001",
+      "ip": "192.168.4.75",
+      "name": "unknown-device-75",
+      "notes": "Needs identification"
+    }
+  ]
+}
