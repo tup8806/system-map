@@ -22,8 +22,11 @@ This document is the step-by-step guide for rebuilding the lab from scratch.
 |------|----------|-----------|
 | Media library | `/srv/media` | _(document your backup status here)_ |
 | RetroPie ROMs | `/srv/retropie` | _(document your backup status here)_ |
-| Jellyfin metadata/watch history | Docker volume | _(document your backup status here)_ |
-| Configs tracked in this repo | `configs/` | Yes — in Git |
+| Jellyfin metadata/watch history | `/srv/appdata/jellyfin` | _(document your backup status here)_ |
+| Uptime Kuma monitors | `/srv/appdata/uptime-kuma` | _(document your backup status here)_ |
+| Tdarr config | `/your/config/tdarr` | _(document your backup status here)_ |
+| Portainer data | Docker volume `portainer_data` | _(document your backup status here)_ |
+| Compose files | `configs/compose/` | Yes — in Git |
 | This documentation | GitHub | Yes — in Git |
 
 ---
@@ -41,12 +44,12 @@ This document is the step-by-step guide for rebuilding the lab from scratch.
    - Install standard system utilities: YES
 4. After install, log in as root
 
-Set a static IP so the server is always at the same address:
+Set a static IP:
 ```bash
 nano /etc/network/interfaces
 ```
 
-Make it look like this (replace `enp2s0` if your interface name is different):
+Make it look like this (run `ip link` if `enp2s0` does not exist):
 ```
 auto enp2s0
 iface enp2s0 inet static
@@ -56,14 +59,12 @@ iface enp2s0 inet static
     dns-nameservers 1.1.1.1 8.8.8.8
 ```
 
-Save with Ctrl+O, Enter, Ctrl+X. Then restart networking:
+Save with Ctrl+O, Enter, Ctrl+X. Then:
 ```bash
 systemctl restart networking
 ip addr show
 ping 192.168.4.1
 ```
-
-> If `enp2s0` does not exist, run `ip link` to see your actual interface name.
 
 ---
 
@@ -73,16 +74,16 @@ apt update && apt upgrade -y
 apt install -y git curl wget htop net-tools nmap samba ufw sudo ca-certificates gnupg lsb-release
 ```
 
-Add your user to sudo (replace `yourusername`):
+Add your user to sudo:
 ```bash
-usermod -aG sudo yourusername
+usermod -aG sudo tup
 ```
 
 ---
 
 ### Step 3 — Install Docker
 
-Copy and paste this whole block at once:
+Paste this whole block at once:
 ```bash
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -96,12 +97,12 @@ echo \
 
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-usermod -aG docker yourusername
+usermod -aG docker tup
 systemctl enable docker
 systemctl start docker
 ```
 
-Verify Docker works:
+Verify:
 ```bash
 docker run hello-world
 ```
@@ -117,61 +118,123 @@ cd system-map
 
 ---
 
-### Step 5 — Restore configs
+### Step 5 — Create appdata and config directories
 ```bash
-cp configs/smb.conf /etc/samba/smb.conf
-systemctl restart smbd
+mkdir -p /srv/appdata/jellyfin
+mkdir -p /srv/appdata/uptime-kuma
+mkdir -p /your/config/tdarr/server
+mkdir -p /your/config/tdarr/logs
+mkdir -p /tmp/tdarr
+mkdir -p /srv/media
 ```
 
-> Add more lines here as you track more configs in the repo.
+> If you have backups of `/srv/appdata` and `/your/config/tdarr`, restore them now before starting containers. That preserves Jellyfin library metadata, watch history, and Tdarr settings.
 
 ---
 
-### Step 6 — Spin up Docker services
-
-Bring them up in this order:
+### Step 6 — Start Portainer first
 ```bash
-# 1. Portainer
 docker run -d \
-    --name portainer \
-    --restart=always \
-    -p 8000:8000 -p 9443:9443 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v portainer_data:/data \
-    portainer/portainer-ce:latest
-
-# 2-6: Jellyfin, Tdarr, Uptime Kuma, OpenClaw, EmulationStation
-# Add your actual run commands here from notes/server-services.md
+  --name portainer \
+  --restart=always \
+  -p 9000:9000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  portainer/portainer-ce:latest
 ```
 
-Check everything is running:
-```bash
-docker ps
-```
+Verify: `docker ps`
+
+Open in browser: `http://192.168.4.76:9000` and set your admin password.
 
 ---
 
-### Step 7 — Configure Samba
+### Step 7 — Start Uptime Kuma
 ```bash
-smbpasswd -a yourusername
+docker run -d \
+  --name uptime-kuma \
+  --restart=unless-stopped \
+  -p 3001:3001 \
+  -v /srv/appdata/uptime-kuma:/app/data \
+  louislam/uptime-kuma:1
+```
+
+Open in browser: `http://192.168.4.76:3001`
+
+---
+
+### Step 8 — Start Jellyfin
+```bash
+docker run -d \
+  --name jellyfin \
+  --restart=unless-stopped \
+  --user 1000:1000 \
+  -p 8096:8096 \
+  -v /srv/appdata/jellyfin:/config \
+  -v /srv/media:/media \
+  jellyfin/jellyfin:latest
+```
+
+Open in browser: `http://192.168.4.76:8096`
+
+> If you restored your `/srv/appdata/jellyfin` backup, your libraries and watch history will be intact. If starting fresh, go through the setup wizard and point your library at `/media`.
+
+---
+
+### Step 9 — Start Tdarr
+
+Tdarr is managed via docker compose. The compose file is saved in this repo at `configs/compose/docker-compose.yml`.
+```bash
+cd ~/system-map/configs/compose
+docker compose up -d
+```
+
+Or if you want to run it manually without compose:
+```bash
+docker run -d \
+  --name tdarr \
+  --restart=unless-stopped \
+  -p 8265:8265 \
+  -p 8266:8266 \
+  -e TZ=America/Chicago \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e UMASK_SET=002 \
+  -e serverIP=0.0.0.0 \
+  -e serverPort=8266 \
+  -e webUIPort=8265 \
+  -e internalNode=true \
+  -e nodeName=MyInternalNode \
+  -v /your/config/tdarr:/app/configs \
+  -v /your/config/tdarr/server:/app/server \
+  -v /your/config/tdarr/logs:/app/logs \
+  -v /srv/media:/media \
+  -v /tmp/tdarr:/temp \
+  ghcr.io/haveagitgat/tdarr:latest
+```
+
+Open in browser: `http://192.168.4.76:8265`
+
+---
+
+### Step 10 — Configure Samba
+```bash
+cp ~/system-map/configs/smb.conf /etc/samba/smb.conf
+smbpasswd -a tup
 systemctl restart smbd nmbd
 systemctl enable smbd nmbd
 ```
 
-Test from the Toughbook:
-```bash
-smbclient -L 192.168.4.76 -U yourusername
-```
-
 ---
 
-### Step 8 — Configure firewall
+### Step 11 — Configure firewall
 ```bash
 ufw allow ssh
 ufw allow samba
 ufw allow 8096
 ufw allow 8265
-ufw allow 9443
+ufw allow 8266
+ufw allow 9000
 ufw allow 3001
 ufw enable
 ufw status
@@ -179,16 +242,15 @@ ufw status
 
 ---
 
-### Step 9 — Verify everything
+### Step 12 — Verify everything
 
-- [ ] SSH from Toughbook: `ssh user@192.168.4.76`
+- [ ] SSH from Toughbook: `ssh tup@192.168.4.76`
+- [ ] Portainer: `http://192.168.4.76:9000`
 - [ ] Jellyfin: `http://192.168.4.76:8096`
-- [ ] Portainer: `https://192.168.4.76:9443`
 - [ ] Uptime Kuma: `http://192.168.4.76:3001`
 - [ ] Tdarr: `http://192.168.4.76:8265`
 - [ ] Samba share visible from Toughbook
-- [ ] OpenClaw responding
-- [ ] EmulationStation launches
+- [ ] All containers show healthy in `docker ps`
 
 ---
 
@@ -231,7 +293,7 @@ chmod +x scripts/*.sh
 
 ### Step 5 — Verify Toughbook roles
 
-- [ ] SSH into server: `ssh user@192.168.4.76`
+- [ ] SSH into server: `ssh tup@192.168.4.76`
 - [ ] Samba shares accessible
 - [ ] Scripts run without errors
 - [ ] Git push works: `git push`
@@ -254,12 +316,11 @@ git push
 
 | Gap | Notes |
 |-----|-------|
-| Docker compose files not tracked | Store in `configs/` and link here |
 | Media backup/restore | Document where media lives and how to restore |
 | RetroPie ROM restore | Document source and restore steps |
 | OpenClaw setup | Not documented anywhere yet |
-| Exact Samba share definitions | Should be in `configs/smb.conf` |
-| Jellyfin library re-scan after restore | Add steps once tested |
+| Appdata backup procedure | `/srv/appdata` should be backed up somewhere |
+| Tdarr config backup | `/your/config/tdarr` should be backed up somewhere |
 
 ---
 
