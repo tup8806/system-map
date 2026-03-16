@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-15 21:11:10.209513",
+  "generated": "2026-03-15 21:13:33.366416",
   "devices": [
     {
       "id": "asset-net-001",
@@ -42,27 +42,18 @@
   "services": [
     {
       "id": "jellyfin",
-      "host": "asset-002",
-      "port": 8096,
-      "type": "media-server"
-    },
-    {
-      "id": "tdarr",
-      "host": "asset-002",
-      "port": 8265,
-      "type": "transcoder"
+      "depends_on": "server",
+      "notes": "Media server"
     },
     {
       "id": "portainer",
-      "host": "asset-002",
-      "port": 9000,
-      "type": "docker-management"
+      "depends_on": "docker",
+      "notes": "Docker management"
     },
     {
       "id": "uptime-kuma",
-      "host": "asset-002",
-      "port": 3001,
-      "type": "monitoring"
+      "depends_on": "server",
+      "notes": "Monitoring"
     }
   ]
 }
