@@ -1,0 +1,9 @@
+id,type,ip,name,notes
+asset-net-001,router,192.168.4.1,eero-router,Primary gateway
+asset-net-002,mesh-node,192.168.4.77,eero-mesh-node,Secondary WiFi node
+asset-002,server,192.168.4.76,server,Home server
+asset-001,workstation,192.168.4.82,toughbook,Admin workstation
+asset-net-003,media-device,192.168.4.23,roku-tv,AirPlay enabled
+asset-net-004,phone,192.168.4.59,pixel-10,Temporary FTP transfers
+asset-unk-002,unknown,192.168.4.25,unknown-device-25,Needs identification
+asset-unk-001,unknown,192.168.4.75,unknown-device-75,Needs identification
