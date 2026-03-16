@@ -1,0 +1,4 @@
+service,depends_on,notes
+jellyfin,server,Media server
+portainer,docker,Docker management
+uptime-kuma,server,Monitoring
