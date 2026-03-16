@@ -1,6 +1,6 @@
 # Disk Usage Snapshot
 
-Captured: Sun Mar 15 11:13:27 AM CDT 2026
+Captured: Sun Mar 15 08:36:54 PM CDT 2026
 
 ## df -h
 Filesystem          Size  Used Avail Use% Mounted on
@@ -10,7 +10,7 @@ tmpfs               774M  1.5M  773M   1% /run
 tmpfs               3.8G     0  3.8G   0% /dev/shm
 tmpfs               5.0M  8.0K  5.0M   1% /run/lock
 tmpfs               774M  2.5M  772M   1% /run/user/1000
-tup@192.168.4.76:/  457G  244G  190G  57% /mnt/myserver
+tup@192.168.4.76:/  457G  245G  190G  57% /mnt/myserver
 
 ## lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS

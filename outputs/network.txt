@@ -1,7 +1,7 @@
 ### Network
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s25          DOWN           
-wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
+wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:4178:d948:ed89:8c46/64 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
 docker0          DOWN           172.17.0.1/16 
 
 default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600 

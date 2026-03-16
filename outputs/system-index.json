@@ -1,53 +1,68 @@
 {
-  "generated": "Sun Mar 15 08:37:30 PM CDT 2026",
+  "generated": "2026-03-15 20:49:19.042947",
   "devices": [
     {
       "id": "asset-net-001",
+      "type": "router",
       "ip": "192.168.4.1",
       "name": "eero-router",
-      "notes": "Primary gateway"
+      "role": "gateway"
     },
     {
       "id": "asset-net-002",
+      "type": "mesh-node",
       "ip": "192.168.4.77",
-      "name": "eero-mesh-node",
-      "notes": "Secondary Wi-Fi node"
+      "name": "eero-mesh-node"
     },
     {
       "id": "asset-002",
+      "type": "server",
       "ip": "192.168.4.76",
-      "name": "server",
-      "notes": "Home server"
+      "name": "home-server"
     },
     {
       "id": "asset-001",
+      "type": "workstation",
       "ip": "192.168.4.82",
-      "name": "toughbook",
-      "notes": "Admin workstation"
-    },
-    {
-      "id": "asset-net-003",
-      "ip": "192.168.4.23",
-      "name": "roku-tv",
-      "notes": "AirPlay enabled"
-    },
-    {
-      "id": "asset-net-004",
-      "ip": "192.168.4.59",
-      "name": "pixel-10",
-      "notes": "Temporary FTP sharing when transferring media"
-    },
-    {
-      "id": "asset-unk-002",
-      "ip": "192.168.4.25",
-      "name": "unknown-device-25",
-      "notes": "Needs identification"
+      "name": "toughbook"
     },
     {
       "id": "asset-unk-001",
+      "type": "unknown",
       "ip": "192.168.4.75",
-      "name": "unknown-device-75",
-      "notes": "Needs identification"
+      "name": "unknown-device-75"
+    },
+    {
+      "id": "asset-unk-002",
+      "type": "unknown",
+      "ip": "192.168.4.25",
+      "name": "unknown-device-25"
+    }
+  ],
+  "services": [
+    {
+      "id": "jellyfin",
+      "host": "asset-002",
+      "port": 8096,
+      "type": "media-server"
+    },
+    {
+      "id": "tdarr",
+      "host": "asset-002",
+      "port": 8265,
+      "type": "transcoder"
+    },
+    {
+      "id": "portainer",
+      "host": "asset-002",
+      "port": 9000,
+      "type": "docker-management"
+    },
+    {
+      "id": "uptime-kuma",
+      "host": "asset-002",
+      "port": 3001,
+      "type": "monitoring"
     }
   ]
 }
