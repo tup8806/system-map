@@ -1,9 +1,9 @@
 # System Map Context
 
-Updated: Sun Mar 15 02:18:49 PM CDT 2026
+Updated: Mon Mar 16 03:00:55 AM CDT 2026
 
 ## Latest Commit
-a4cbf30 Add stable IDs and clean up system-map structure
+44e3c50 Server services snapshot 2026-03-16 03:00
 
 ## Core Documentation
 - README.md
@@ -21,10 +21,12 @@ a4cbf30 Add stable IDs and clean up system-map structure
 - notes/hardware/server.md
 
 ## network.txt
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 ### Network
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s25          DOWN           
-wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
+wlp10s0          UP             192.168.4.82/22 fde2:5368:55a8:1:4178:d948:ed89:8c46/64 fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64 fde2:5368:55a8:1:227:10ff:fe37:78e8/64 fe80::227:10ff:fe37:78e8/64 
 docker0          DOWN           172.17.0.1/16 
 
 default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600 
@@ -33,6 +35,8 @@ default via 192.168.4.1 dev wlp10s0 proto dhcp src 192.168.4.82 metric 600
 192.168.4.0/22 dev wlp10s0 proto kernel scope link src 192.168.4.82 metric 600 
 
 ## hardware.txt
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 ### Hardware
 Architecture:                            x86_64
 CPU op-mode(s):                          32-bit, 64-bit
@@ -49,7 +53,11 @@ Core(s) per socket:                      2
 Socket(s):                               1
 Stepping:                                2
 Frequency boost:                         enabled
-CPU(s) scaling MHz:                      81%
+<<<<<<< Updated upstream
+CPU(s) scaling MHz:                      65%
+=======
+CPU(s) scaling MHz:                      102%
+>>>>>>> Stashed changes
 CPU max MHz:                             2400.0000
 CPU min MHz:                             1199.0000
 BogoMIPS:                                4787.88
@@ -87,10 +95,14 @@ sda    476.9G                   TEAM T253512GB
 zram0    3.8G        [SWAP]     
 
 ## services.txt
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 ### Running services
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 ## storage.txt
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 ### Storage
 Filesystem          Size  Used Avail Use% Mounted on
 udev                3.8G     0  3.8G   0% /dev
@@ -99,5 +111,5 @@ tmpfs               774M  1.5M  773M   1% /run
 tmpfs               3.8G     0  3.8G   0% /dev/shm
 tmpfs               5.0M  8.0K  5.0M   1% /run/lock
 tmpfs               774M  2.5M  772M   1% /run/user/1000
-tup@192.168.4.76:/  457G  244G  190G  57% /mnt/myserver
+tup@192.168.4.76:/  457G  245G  190G  57% /mnt/myserver
 

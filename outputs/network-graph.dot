@@ -1,5 +1,3 @@
-# generated: 2026-03-15 21:43:38 CDT | host: toughbook
-
 digraph homelab {
 rankdir=LR;
 node [shape=box, style=rounded];
