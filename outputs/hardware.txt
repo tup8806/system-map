@@ -14,7 +14,11 @@ Core(s) per socket:                      2
 Socket(s):                               1
 Stepping:                                2
 Frequency boost:                         enabled
+<<<<<<< Updated upstream
 CPU(s) scaling MHz:                      65%
+=======
+CPU(s) scaling MHz:                      102%
+>>>>>>> Stashed changes
 CPU max MHz:                             2400.0000
 CPU min MHz:                             1199.0000
 BogoMIPS:                                4787.88

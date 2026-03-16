@@ -82,3 +82,110 @@ LISTEN 0      128             [::]:22            [::]:*
 - Network topology: notes/network-topology.md
 - Server services: notes/server-services.md
 - Server applications: notes/server-applications.md
+
+---
+
+## Output Freshness
+
+<!-- FRESHNESS_TABLE_START -->
+_Last updated: 2026-03-15 21:43:38 CDT by `stamp-outputs.sh` on `toughbook`_
+
+| File | Last Generated | Host |
+|------|----------------|------|
+| `outputs/all-packages.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/cpu.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/device-inventory.md` | 2026-03-15 21:43:38 CDT | toughbook-- |
+| `outputs/disk-usage.md` | 2026-03-15 21:43:38 CDT | toughbook-- |
+| `outputs/docker-containers.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/docker-images.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/drift-report.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/filesystems.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/firewall-rules.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/flatpaks.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/bluetooth-controllers.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/dmidecode-baseboard.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/dmidecode-bios.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/dmidecode-memory.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/dmidecode-system.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/ip-address.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/ip-route.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/lsblk.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/lscpu.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/lspci.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/lsusb.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/nmcli-active-connections.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/nmcli-device-status.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/rfkill.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/hardware/uname.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/kernel-modules.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/lab-status.md` | 2026-03-15 21:43:38 CDT | toughbook-- |
+| `outputs/listening-ports.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/manual-packages.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/memory.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/mounts.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/network-discovery.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/network-graph.dot` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/network-identity.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/network-map.dot` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/network-scan.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/network.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/new-devices.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/open-ports.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/os-release.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/running-services.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/all-packages.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/blkid.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/cpu.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/docker-containers.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/docker-images.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/docker-inspect.json` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/docker-networks.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/docker-volumes.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/filesystems.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/findmnt.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/firewall-rules.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/flatpaks.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/fstab.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/kernel-modules.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/listening-ports.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/manual-packages.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/memory.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/mounts.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/network.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/nfs-exports.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/open-ports.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/os-release.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/running-services.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/samba-config.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/services-system.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/services-user.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/snaps.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/storage.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/system-cron-files.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/systemd-timers.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/system-info.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/server/user-cron.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/services-system.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/services.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/services-user.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/snaps.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/apt-manual.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/docker-ps-a.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/dpkg-packages.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/npm-global.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/pip3-freeze.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/snap-list.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/systemd-running-services.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/software/systemd-unit-files.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/storage.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/system-cron-files.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/systemd-timers.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/system-index.json` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/system-info.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/system-summary.md` | 2026-03-15 21:43:38 CDT | toughbook-- |
+| `outputs/toughbook-enabled-services.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/toughbook-global-npm.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/toughbook-manual-packages.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+| `outputs/user-cron.txt` | 2026-03-15 21:43:38 CDT | toughbook |
+<!-- FRESHNESS_TABLE_END -->
