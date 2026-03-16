@@ -30,6 +30,7 @@ gvfs-gphoto2-volume-monitor.service                                   static    
 gvfs-metadata.service                                                 static    -
 gvfs-mtp-volume-monitor.service                                       static    -
 gvfs-udisks2-volume-monitor.service                                   static    -
+nightly-toughbook.service                                             static    -
 obex.service                                                          enabled   enabled
 openclaw-gateway.service                                              enabled   enabled
 pipewire-pulse.service                                                enabled   enabled
@@ -50,4 +51,4 @@ xdg-permission-store.service                                          static    
 xfce4-notifyd.service                                                 static    -
 xscreensaver.service                                                  disabled  enabled
 
-50 unit files listed.
+51 unit files listed.

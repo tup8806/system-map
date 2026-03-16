@@ -7,17 +7,18 @@ GENERAL.CONNECTION:                     Tupper1
 GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/2
 IP4.ADDRESS[1]:                         192.168.4.82/22
 IP4.GATEWAY:                            192.168.4.1
-IP4.ROUTE[1]:                           dst = 192.168.4.0/22, nh = 0.0.0.0, mt = 600
-IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 192.168.4.1, mt = 600
-IP4.ROUTE[3]:                           dst = 169.254.0.0/16, nh = 0.0.0.0, mt = 1000
+IP4.ROUTE[1]:                           dst = 0.0.0.0/0, nh = 192.168.4.1, mt = 600
+IP4.ROUTE[2]:                           dst = 169.254.0.0/16, nh = 0.0.0.0, mt = 1000
+IP4.ROUTE[3]:                           dst = 192.168.4.0/22, nh = 0.0.0.0, mt = 600
 IP4.DNS[1]:                             192.168.4.1
-IP6.ADDRESS[1]:                         fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64
-IP6.ADDRESS[2]:                         fde2:5368:55a8:1:227:10ff:fe37:78e8/64
-IP6.ADDRESS[3]:                         fe80::227:10ff:fe37:78e8/64
+IP6.ADDRESS[1]:                         fde2:5368:55a8:1:4178:d948:ed89:8c46/64
+IP6.ADDRESS[2]:                         fde2:5368:55a8:1:db8f:d7b6:5ac1:7d76/64
+IP6.ADDRESS[3]:                         fde2:5368:55a8:1:227:10ff:fe37:78e8/64
+IP6.ADDRESS[4]:                         fe80::227:10ff:fe37:78e8/64
 IP6.GATEWAY:                            --
-IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 1024
-IP6.ROUTE[2]:                           dst = fde2:5368:55a8:1::/64, nh = ::, mt = 600
-IP6.ROUTE[3]:                           dst = fdbb:6cf8:c276:1::/64, nh = fe80::46ac:85ff:fe41:daf2, mt = 600
+IP6.ROUTE[1]:                           dst = fde2:5368:55a8:1::/64, nh = ::, mt = 600
+IP6.ROUTE[2]:                           dst = fe80::/64, nh = ::, mt = 1024
+IP6.ROUTE[3]:                           dst = fdbb:6cf8:c276:1::/64, nh = fe80::46ac:85ff:fe22:eff2, mt = 600
 IP6.DNS[1]:                             fde2:5368:55a8:1::1
 
 GENERAL.DEVICE:                         lo

@@ -1,0 +1,32 @@
+devices:
+
+  - id: asset-net-001
+    type: router
+    ip: 192.168.4.1
+    name: eero-router
+    role: gateway
+
+  - id: asset-net-002
+    type: mesh-node
+    ip: 192.168.4.77
+    name: eero-mesh-node
+
+  - id: asset-002
+    type: server
+    ip: 192.168.4.76
+    name: home-server
+
+  - id: asset-001
+    type: workstation
+    ip: 192.168.4.82
+    name: toughbook
+
+  - id: asset-unk-001
+    type: unknown
+    ip: 192.168.4.75
+    name: unknown-device-75
+
+  - id: asset-unk-002
+    type: unknown
+    ip: 192.168.4.25
+    name: unknown-device-25

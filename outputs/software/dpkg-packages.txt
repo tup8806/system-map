@@ -10,6 +10,7 @@ apt	2.6.1
 apt-listchanges	3.24
 apt-transport-https	2.6.1
 apt-utils	2.6.1
+arp-scan	1.10.0-2
 aspell	0.60.8-4+b1
 aspell-en	2020.12.07-0-1
 at-spi2-common	2.46.0-5
@@ -58,7 +59,7 @@ colord	1.4.6-2.2
 colord-data	1.4.6-2.2
 console-setup	1.221
 console-setup-linux	1.221
-containerd.io	2.2.1-1~debian.12~bookworm
+containerd.io	2.2.2-1~debian.12~bookworm
 coreutils	9.1-1
 cpio	2.13+dfsg-7.1
 cpp	4:12.2.0-3
@@ -244,9 +245,10 @@ iamerican	3.4.05-1
 ibritish	3.4.05-1
 ibverbs-providers:amd64	44.0-2
 icu-devtools	72.1-3+deb12u1
+ieee-data	20220827.1
 ienglish-common	3.4.05-1
 ifupdown	0.8.41
-imagemagick-6-common	8:6.9.11.60+dfsg-1.6+deb12u6
+imagemagick-6-common	8:6.9.11.60+dfsg-1.6+deb12u7
 inetutils-telnet	2:2.4-2+deb12u2
 init	1.65.2+deb12u1
 init-system-helpers	1.65.2+deb12u1
@@ -432,7 +434,7 @@ libcolorhug2:amd64	1.4.6-2.2
 libcom-err2:amd64	1.47.0-2+b2
 libcppunit-1.15-0:amd64	1.15.1-4+b1
 libcppunit-dev:amd64	1.15.1-4+b1
-libcpupower1	6.1.162-1
+libcpupower1	6.1.164-1
 libcrypt-dev:amd64	1:4.4.33-2
 libcrypt1:amd64	1:4.4.33-2
 libcryptsetup12:amd64	2:2.6.1-4~deb12u2
@@ -489,6 +491,7 @@ libeigen3-dev	3.4.0-4
 libelf1:amd64	0.188-2.1
 libenchant-2-2:amd64	2.3.3-2
 libencode-locale-perl	1.05-3
+libencode-perl:amd64	3.19-1+b1
 libeot0:amd64	0.01-5+b1
 libepoxy0:amd64	1.5.10-1
 libept1.6.0:amd64	1.2.1
@@ -793,6 +796,7 @@ liblerc4:amd64	4.0.0+ds-2
 liblightdm-gobject-1-0:amd64	1.26.0-8
 liblilv-0-0:amd64	0.24.14-1
 liblimesuite22.09-1:amd64	22.09.1+dfsg-1+b2
+liblinear4:amd64	2.3.0+dfsg-5
 libllvm14:amd64	1:14.0.6-12
 libllvm15:amd64	1:15.0.6-4+b1
 liblmdb0:amd64	0.9.24-1
@@ -816,9 +820,9 @@ liblz4-1:amd64	1.9.4-1
 liblzma5:amd64	5.4.1-1
 libmagic-mgc	1:5.44-3
 libmagic1:amd64	1:5.44-3
-libmagickcore-6.q16-6:amd64	8:6.9.11.60+dfsg-1.6+deb12u6
-libmagickcore-6.q16-6-extra:amd64	8:6.9.11.60+dfsg-1.6+deb12u6
-libmagickwand-6.q16-6:amd64	8:6.9.11.60+dfsg-1.6+deb12u6
+libmagickcore-6.q16-6:amd64	8:6.9.11.60+dfsg-1.6+deb12u7
+libmagickcore-6.q16-6-extra:amd64	8:6.9.11.60+dfsg-1.6+deb12u7
+libmagickwand-6.q16-6:amd64	8:6.9.11.60+dfsg-1.6+deb12u7
 libmailtools-perl	2.21-2
 libmanette-0.2-0:amd64	0.2.6-3+b1
 libmariadb3:amd64	1:10.11.14-0+deb12u2
@@ -1148,6 +1152,8 @@ libteamdctl0:amd64	1.31-1
 libtecla1:amd64	1.6.3-3+b1
 libtevent0:amd64	0.14.1-1
 libtext-charwidth-perl:amd64	0.04-11
+libtext-csv-perl	2.02-2
+libtext-csv-xs-perl:amd64	1.49-1
 libtext-iconv-perl:amd64	1.7-8
 libtext-wrapi18n-perl	0.06-10
 libthai-data	0.1.29-1
@@ -1350,16 +1356,19 @@ lightdm	1.26.0-8
 lightdm-gtk-greeter	2.0.8-2+b1
 limesuite-udev	22.09.1+dfsg-1
 linux-base	4.9
-linux-compiler-gcc-12-x86	6.1.162-1
-linux-cpupower	6.1.162-1
+linux-compiler-gcc-12-x86	6.1.164-1
+linux-cpupower	6.1.164-1
 linux-headers-6.1.0-43-amd64	6.1.162-1
 linux-headers-6.1.0-43-common	6.1.162-1
-linux-headers-amd64	6.1.162-1
+linux-headers-6.1.0-44-amd64	6.1.164-1
+linux-headers-6.1.0-44-common	6.1.164-1
+linux-headers-amd64	6.1.164-1
 linux-image-6.1.0-39-amd64	6.1.148-1
 linux-image-6.1.0-43-amd64	6.1.162-1
-linux-image-amd64	6.1.162-1
-linux-kbuild-6.1	6.1.162-1
-linux-libc-dev:amd64	6.1.162-1
+linux-image-6.1.0-44-amd64	6.1.164-1
+linux-image-amd64	6.1.164-1
+linux-kbuild-6.1	6.1.164-1
+linux-libc-dev:amd64	6.1.164-1
 lm-sensors	1:3.6.0-7.1
 locales	2.36-9+deb12u13
 login	1:4.13+dfsg1-1+deb12u2
@@ -1368,6 +1377,7 @@ logsave	1.47.0-2+b2
 lp-solve	5.5.2.5-2
 lsb-release	12.0-1
 lsof	4.95.0-1
+lua-lpeg:amd64	1.0.2-2
 lynx	2.9.0dev.12-1
 lynx-common	2.9.0dev.12-1
 mailcap	3.70+nmu1
@@ -1398,6 +1408,8 @@ netpbm	2:11.01.00-2
 network-manager	1.42.4-1+deb12u1
 network-manager-gnome	1.30.0-2
 nftables	1.0.6-2+deb12u2
+nmap	7.93+dfsg1-1
+nmap-common	7.93+dfsg1-1
 node-clipboard	2.0.11+ds+~cs9.6.11-1
 node-normalize.css	8.0.1-5
 node-prismjs	1.29.0+dfsg+~1.26.0-1
@@ -1605,6 +1617,7 @@ qtwayland5:amd64	5.15.8-2
 quodlibet	4.5.0-2
 readline-common	8.2-1.3
 reportbug	12.0.0
+rfkill	2.38.1-5+deb12u3
 ristretto	0.12.4-1
 rpcsvc-proto	1.4.3-1
 rsync	3.2.7-1+deb12u4

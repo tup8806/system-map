@@ -121,3 +121,4 @@ alias dockeron="sudo systemctl start docker containerd"
 
 # OpenClaw Completion
 source "/home/tup/.openclaw/completions/openclaw.bash"
+export PATH="$PATH:/usr/sbin"

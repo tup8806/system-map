@@ -3,6 +3,7 @@ apt
 apt-listchanges
 apt-transport-https
 apt-utils
+arp-scan
 base-files
 base-passwd
 bash
@@ -55,6 +56,7 @@ git
 gnupg
 gpgv
 gqrx-sdr
+graphviz
 grep
 groff-base
 grub-common
@@ -197,6 +199,7 @@ ncurses-term
 netbase
 netcat-traditional
 nftables
+nmap
 nodejs
 openssh-client
 os-prober
@@ -213,6 +216,7 @@ procps
 python3-reportbug
 readline-common
 reportbug
+rfkill
 rsync
 rtl-433
 rtl-sdr

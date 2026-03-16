@@ -13,6 +13,7 @@
   gvfs-metadata.service               loaded    active   running Virtual filesystem metadata service
   gvfs-mtp-volume-monitor.service     loaded    active   running Virtual filesystem service - Media Transfer Protocol monitor
   gvfs-udisks2-volume-monitor.service loaded    active   running Virtual filesystem service - disk device monitor
+  nightly-toughbook.service           loaded    inactive dead    Toughbook Nightly Lab Snapshot
   obex.service                        loaded    active   running Bluetooth OBEX service
   openclaw-gateway.service            loaded    active   running OpenClaw Gateway (v2026.3.2)
 ● pipewire-media-session.service      not-found inactive dead    pipewire-media-session.service
@@ -29,5 +30,5 @@
 LOAD   = Reflects whether the unit definition was properly loaded.
 ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
 SUB    = The low-level unit activation state, values depend on unit type.
-26 loaded units listed.
+27 loaded units listed.
 To show all installed unit files use 'systemctl list-unit-files'.

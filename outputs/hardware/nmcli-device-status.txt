@@ -1,4 +1,5 @@
 DEVICE   TYPE      STATE                   CONNECTION 
 wlp10s0  wifi      connected               Tupper1    
 lo       loopback  connected (externally)  lo         
+docker0  bridge    connected (externally)  docker0    
 enp0s25  ethernet  unavailable             --         

@@ -1,32 +1,56 @@
 #!/bin/bash
 set -e
 
-BASE="$HOME/system-map"
+REPO="$HOME/system-map"
 
-"$BASE/scripts/update-system-map.sh"
+echo "=== Nightly system map run ==="
+echo "Time: $(date)"
+echo ""
 
-echo
-echo "Next steps:"
-echo "1) Update your notes:"
-echo "   nano CHANGES.md"
-echo
-echo "2) Review changes:"
-echo "   git status"
-echo "   git diff --stat"
-echo
-echo "3) Save snapshot:"
-echo "   git add ."
-echo "   git commit -m \"Nightly update\""
-echo "   git push"
+echo "Collecting system information..."
+$REPO/scripts/collect-system-info.sh || true
+$REPO/scripts/export-hardware-inventory.sh || true
+$REPO/scripts/export-software-inventory.sh || true
+$REPO/scripts/export-disk-usage.sh || true
+$REPO/scripts/export-configs.sh || true
 
-echo "Updating git repository..."
+echo ""
+echo "Capturing network state..."
+$REPO/scripts/capture-network.sh || true
+$REPO/scripts/network-discovery.sh || true
 
-cd "$HOME/system-map"
+echo ""
+echo "Generating reports..."
+$REPO/scripts/generate-system-summary.sh || true
+$REPO/scripts/generate-lab-status.sh || true
+$REPO/scripts/generate-network-diagram.sh || true
+$REPO/scripts/generate-network-graph.sh || true
 
-git add outputs configs 2>/dev/null
+echo ""
+echo "Detecting unknown devices..."
+$REPO/scripts/detect-new-devices.sh || true
 
-git commit -m "Nightly system snapshot $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || echo "No changes to commit"
+echo ""
+echo "Rebuilding system index..."
+$REPO/scripts/build-system-index.sh || true
 
-git push 2>/dev/null || echo "Git push skipped or failed"
+echo ""
+echo "Checking for system drift..."
+$REPO/scripts/check-drift.sh || true
 
-echo "Snapshot complete."
+echo ""
+echo "Creating git snapshot..."
+cd "$REPO"
+
+git add outputs/system-index.json \
+        outputs/drift-report.txt \
+        outputs/new-devices.txt \
+        outputs/lab-status.md \
+        outputs/system-summary.md \
+        outputs/network-map.png \
+        outputs/network-graph.png || true
+
+git commit -m "Automated nightly system snapshot $(date)" || true
+
+echo ""
+echo "Nightly run complete."
