@@ -1,3 +1,5 @@
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                                                                                                       
 udp   UNCONN 0      0            0.0.0.0:46311      0.0.0.0:*    users:(("firefox-esr",pid=1419,fd=60)) uid:1000 ino:156385 sk:e cgroup:/user.slice/user-1000.slice/session-3.scope <->                                       
 udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("openclaw-gatewa",pid=786,fd=26)) uid:1000 ino:24761 sk:2 cgroup:/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service <->

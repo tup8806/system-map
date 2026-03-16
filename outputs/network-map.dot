@@ -1,3 +1,5 @@
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 digraph homelab {
     rankdir=LR;
     graph [label="Home Lab Network Map", labelloc=top, fontsize=20];

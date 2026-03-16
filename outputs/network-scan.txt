@@ -1,3 +1,5 @@
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 # Nmap 7.93 scan initiated Sun Mar 15 02:01:59 2026 as: nmap -sn -oN /home/tup/system-map/outputs/network-scan.txt 192.168.4.0/22
 Nmap scan report for 192.168.4.1
 Host is up (0.0050s latency).

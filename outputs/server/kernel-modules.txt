@@ -1,3 +1,5 @@
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 Module                  Size  Used by
 tcp_diag               16384  0
 udp_diag               16384  0

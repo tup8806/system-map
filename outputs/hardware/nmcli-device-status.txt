@@ -1,3 +1,5 @@
+# generated: 2026-03-15 21:43:38 CDT | host: toughbook
+
 DEVICE   TYPE      STATE                   CONNECTION 
 wlp10s0  wifi      connected               Tupper1    
 lo       loopback  connected (externally)  lo         
