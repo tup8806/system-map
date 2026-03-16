@@ -1,13 +1,9 @@
 # Home Lab Status
 
-Generated: Sun Mar 15 09:00:47 PM CDT 2026
+Generated: Sun Mar 15 09:05:41 PM CDT 2026
 
 ## Server Services
-id       container_name  image                             status   ports                                                 restart_policy
-svc-002  tdarr           ghcr.io/haveagitgat/tdarr:latest  running  "8265/tcp -> 0.0.0.0:8265; 8266/tcp -> 0.0.0.0:8266"  unless-stopped
-svc-001  jellyfin        jellyfin/jellyfin:latest          running  "8096/tcp -> 0.0.0.0:8096"                            unless-stopped
-svc-003  uptime-kuma     louislam/uptime-kuma:1            running  "3001/tcp -> 0.0.0.0:3001"                            unless-stopped
-svc-004  portainer       portainer/portainer-ce:latest     running  "9000/tcp -> 0.0.0.0:9000"                            always
+id  container_name  image  status  ports  restart_policy
 
 ## Discovered Devices
 Interface: wlp10s0, type: EN10MB, MAC: 00:27:10:37:78:e8, IPv4: 192.168.4.82
